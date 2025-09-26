@@ -1,5 +1,7 @@
 package ua.food_delivery.util;
 
+import ua.food_delivery.model.CuisineType;
+
 public class RestaurantUtils {
     private RestaurantUtils(){}
 
@@ -7,8 +9,8 @@ public class RestaurantUtils {
         return ValidationHelper.isStringLengthBetween(name, 1, 100);
     }
 
-    public static boolean isValidCuisine(String cuisine){
-        return ValidationHelper.isStringLengthBetween(cuisine, 1, 50);
+    public static boolean isValidCuisineType(CuisineType cuisineType){
+        return cuisineType != null;
     }
 
     public static boolean isValidLocation(String location){

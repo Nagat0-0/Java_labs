@@ -5,14 +5,14 @@ import java.util.Objects;
 
 public class Restaurant {
     private String name;
-    private String cuisine;
+    private CuisineType cuisineType; // 🔹 enum замість String
     private String location;
 
     public Restaurant() {}
 
-    public Restaurant(String name, String cuisine, String location) {
+    public Restaurant(String name, CuisineType cuisineType, String location) {
         setName(name);
-        setCuisine(cuisine);
+        setCuisineType(cuisineType);
         setLocation(location);
     }
 
@@ -26,13 +26,13 @@ public class Restaurant {
         }
     }
 
-    public String getCuisine() {
-        return cuisine;
+    public CuisineType getCuisineType() {
+        return cuisineType;
     }
 
-    public void setCuisine(String cuisine) {
-        if (RestaurantUtils.isValidCuisine(cuisine)) {
-            this.cuisine = cuisine.trim();
+    public void setCuisineType(CuisineType cuisineType) {
+        if (RestaurantUtils.isValidCuisineType(cuisineType)) {
+            this.cuisineType = cuisineType;
         }
     }
 
@@ -46,11 +46,11 @@ public class Restaurant {
         }
     }
 
-    public static Restaurant createRestaurant(String name, String cuisine, String location) {
+    public static Restaurant createRestaurant(String name, CuisineType cuisineType, String location) {
         if (RestaurantUtils.isValidName(name) &&
-                RestaurantUtils.isValidCuisine(cuisine) &&
+                RestaurantUtils.isValidCuisineType(cuisineType) &&
                 RestaurantUtils.isValidLocation(location)) {
-            return new Restaurant(name, cuisine, location);
+            return new Restaurant(name, cuisineType, location);
         }
         return null;
     }
@@ -59,7 +59,7 @@ public class Restaurant {
     public String toString() {
         return "Restaurant{" +
                 "name='" + name + '\'' +
-                ", cuisine='" + cuisine + '\'' +
+                ", cuisineType=" + cuisineType +
                 ", location='" + location + '\'' +
                 '}';
     }
@@ -69,12 +69,12 @@ public class Restaurant {
         if (this == o) return true;
         if (!(o instanceof Restaurant restaurant)) return false;
         return Objects.equals(name, restaurant.name) &&
-                Objects.equals(cuisine, restaurant.cuisine) &&
+                cuisineType == restaurant.cuisineType &&
                 Objects.equals(location, restaurant.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, cuisine, location);
+        return Objects.hash(name, cuisineType, location);
     }
 }
