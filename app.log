@@ -1,0 +1,116 @@
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.Main main
+INFO: === Food Delivery App Started ===
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Restaurant created: Restaurant{name='Pizza Palace', cuisineType=ITALIAN, location='123 Pizza St'}
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Restaurant created: Restaurant{name='Sushi House', cuisineType=JAPANESE, location='456 Fish Ave'}
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Restaurant created: Restaurant{name='Taco Town', cuisineType=MEXICAN, location='789 Spice Rd'}
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+WARNING: Unknown cuisine type at line 4
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Restaurant created: Restaurant{name='Burger Barn', cuisineType=AMERICAN, location='101 Grill Blvd'}
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Finished reading restaurants file.
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Customer created: Ivan Franko Lviv
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Customer created: Taras Shevchenko Kyiv
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Customer created: Lina Kostenko Kyiv
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+WARNING: Invalid customer data at line 4: Invalid last name: 
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Customer created: Lesya Ukrainka Lutsk
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Finished reading customers file.
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Menu item created: MenuItem{name='Margherita Pizza', price=150.5, category='Pizza'}
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Menu item created: MenuItem{name='California Roll', price=220.0, category='Sushi'}
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Menu item created: MenuItem{name='Beef Taco', price=80.75, category='Tacos'}
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Menu item created: MenuItem{name='Super Burger', price=180.0, category='Burgers'}
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+WARNING: Invalid price format at line 5
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+WARNING: Invalid menu item data at line 6: Invalid price: -100.0
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Finished reading menu items file.
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.Main main
+INFO: Successfully read all data from files.
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.Main main
+INFO: Restaurants count: 4
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.Main main
+INFO: Customers count: 4
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.Main main
+INFO: Menu items count: 4
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.Main main
+INFO: Order created: Order{customer=Customer[firstName=Ivan franko, lastName=Lviv, address=Kropyvnytskoho St 10], items=[MenuItem{name='Margherita Pizza', price=150.5, category='Pizza'}], orderDate=2025-10-15T23:50:56.170549500, status=CONFIRMED}
+окт. 15, 2025 11:50:56 PM main.java.ua.food_delivery.Main main
+INFO: === Food Delivery App Finished ===
+окт. 16, 2025 12:30:19 AM ua.food_delivery.Main main
+INFO: === Food Delivery App Started ===
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Restaurant created: Restaurant{name='Pizza Palace', cuisineType=ITALIAN, location='123 Pizza St'}
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Restaurant created: Restaurant{name='Sushi House', cuisineType=JAPANESE, location='456 Fish Ave'}
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Restaurant created: Restaurant{name='Taco Town', cuisineType=MEXICAN, location='789 Spice Rd'}
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+WARNING: Unknown cuisine type at line 4
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Restaurant created: Restaurant{name='Burger Barn', cuisineType=AMERICAN, location='101 Grill Blvd'}
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Finished reading restaurants file.
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Customer created: Ivan Franko Lviv
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Customer created: Taras Shevchenko Kyiv
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Customer created: Lina Kostenko Kyiv
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+WARNING: Invalid customer data at line 4: Invalid last name: 
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Customer created: Lesya Ukrainka Lutsk
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Finished reading customers file.
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Menu item created: MenuItem{name='Margherita Pizza', price=150.5, category='Pizza'}
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Menu item created: MenuItem{name='California Roll', price=220.0, category='Sushi'}
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Menu item created: MenuItem{name='Beef Taco', price=80.75, category='Tacos'}
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Menu item created: MenuItem{name='Super Burger', price=180.0, category='Burgers'}
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+WARNING: Invalid price format at line 5
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+WARNING: Invalid menu item data at line 6: Invalid price: -100.0
+окт. 16, 2025 12:30:19 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Finished reading menu items file.
+окт. 16, 2025 12:30:19 AM ua.food_delivery.Main main
+INFO: Successfully read all data from files.
+окт. 16, 2025 12:30:19 AM ua.food_delivery.Main main
+INFO: Restaurants count: 4
+окт. 16, 2025 12:30:19 AM ua.food_delivery.Main main
+INFO: Customers count: 4
+окт. 16, 2025 12:30:19 AM ua.food_delivery.Main main
+INFO: Menu items count: 4
+окт. 16, 2025 12:30:19 AM ua.food_delivery.Main main
+INFO: Order created: Order{customer=Customer[firstName=Ivan franko, lastName=Lviv, address=Kropyvnytskoho St 10], items=[MenuItem{name='Margherita Pizza', price=150.5, category='Pizza'}], orderDate=2025-10-16T00:30:19.113576600, status=CONFIRMED}
+окт. 16, 2025 12:30:19 AM ua.food_delivery.Main main
+INFO: === Food Delivery App Finished ===
+окт. 16, 2025 12:57:34 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Finished reading menu items file.
+окт. 16, 2025 12:57:34 AM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Finished reading customers file.
+окт. 16, 2025 12:57:34 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Finished reading restaurants file.
+окт. 16, 2025 12:58:17 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+INFO: Finished reading menu items file.
+окт. 16, 2025 12:58:17 AM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+INFO: Finished reading customers file.
+окт. 16, 2025 12:58:17 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+INFO: Finished reading restaurants file.
