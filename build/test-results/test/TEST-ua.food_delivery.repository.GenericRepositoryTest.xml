@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ua.food_delivery.repository.GenericRepositoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-10-30T08:08:29.121Z" hostname="DESKTOP-13PE41B" time="0.074">
+  <properties/>
+  <testcase name="testAddNull()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.026"/>
+  <testcase name="testRemoveNonExistent()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.02"/>
+  <testcase name="testAddAndFindByIdentity()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.003"/>
+  <testcase name="testFindByIdentityNotFound()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.004"/>
+  <testcase name="testGetAll()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.005"/>
+  <testcase name="testRemove()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.007"/>
+  <testcase name="testAddDuplicate()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository <init>
+INFO: Repository created for TestCustomer
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+WARNING: Attempted to add a null TestCustomer
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository getAll
+INFO: Getting all 0 TestCustomer items
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository <init>
+INFO: Repository created for TestCustomer
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Тест Один' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer with identity 'Тест Один': Customer[firstName=Тест, lastName=Один, address=Адреса 1]
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository remove
+WARNING: Failed to remove TestCustomer: Customer[firstName=Тест, lastName=Два, address=Адреса 2]
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository getAll
+INFO: Getting all 1 TestCustomer items
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository <init>
+INFO: Repository created for TestCustomer
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Тест Один' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer with identity 'Тест Один': Customer[firstName=Тест, lastName=Один, address=Адреса 1]
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: Found TestCustomer with identity 'Тест Один'.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository <init>
+INFO: Repository created for TestCustomer
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Тест Один' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer with identity 'Тест Один': Customer[firstName=Тест, lastName=Один, address=Адреса 1]
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Неіснуючий Клієнт' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository <init>
+INFO: Repository created for TestCustomer
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Тест Один' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer with identity 'Тест Один': Customer[firstName=Тест, lastName=Один, address=Адреса 1]
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Тест Два' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer with identity 'Тест Два': Customer[firstName=Тест, lastName=Два, address=Адреса 2]
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository getAll
+INFO: Getting all 2 TestCustomer items
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository <init>
+INFO: Repository created for TestCustomer
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Тест Один' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer with identity 'Тест Один': Customer[firstName=Тест, lastName=Один, address=Адреса 1]
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Тест Два' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer with identity 'Тест Два': Customer[firstName=Тест, lastName=Два, address=Адреса 2]
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: Found TestCustomer with identity 'Тест Два'.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository remove
+INFO: TestCustomer with identity 'Тест Два' successfully removed.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Тест Два' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository getAll
+INFO: Getting all 1 TestCustomer items
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: Found TestCustomer with identity 'Тест Один'.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository <init>
+INFO: Repository created for TestCustomer
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: TestCustomer with identity 'Тест Один' not found.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer with identity 'Тест Один': Customer[firstName=Тест, lastName=Один, address=Адреса 1]
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: Found TestCustomer with identity 'Тест Один'.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository add
+WARNING: TestCustomer with identity 'Тест Один' already exists. Add skipped.
+окт. 30, 2025 10:08:29 AM ua.food_delivery.repository.GenericRepository getAll
+INFO: Getting all 1 TestCustomer items
+]]></system-err>
+</testsuite>

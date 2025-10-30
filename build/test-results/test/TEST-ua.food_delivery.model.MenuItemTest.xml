@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ua.food_delivery.model.MenuItemTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-10-15T21:58:17.522Z" hostname="DESKTOP-13PE41B" time="0.007">
+<testsuite name="ua.food_delivery.model.MenuItemTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-10-30T08:08:29.089Z" hostname="DESKTOP-13PE41B" time="0.008">
   <properties/>
   <testcase name="testInvalidPriceThrowsException()" classname="ua.food_delivery.model.MenuItemTest" time="0.005"/>
-  <testcase name="testValidMenuItem()" classname="ua.food_delivery.model.MenuItemTest" time="0.001"/>
-  <testcase name="testEqualsAndHashCode()" classname="ua.food_delivery.model.MenuItemTest" time="0.0"/>
+  <testcase name="testValidMenuItem()" classname="ua.food_delivery.model.MenuItemTest" time="0.0"/>
+  <testcase name="testEqualsAndHashCode()" classname="ua.food_delivery.model.MenuItemTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ua.food_delivery.model.OrderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-10-15T21:58:17.531Z" hostname="DESKTOP-13PE41B" time="0.006">
+<testsuite name="ua.food_delivery.model.OrderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-10-30T08:08:29.099Z" hostname="DESKTOP-13PE41B" time="0.005">
   <properties/>
   <testcase name="testStatusDescription()" classname="ua.food_delivery.model.OrderTest" time="0.002"/>
   <testcase name="testValidOrderCreation()" classname="ua.food_delivery.model.OrderTest" time="0.001"/>
