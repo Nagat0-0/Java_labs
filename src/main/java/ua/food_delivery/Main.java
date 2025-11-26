@@ -1,161 +1,93 @@
 package ua.food_delivery;
 
 import ua.food_delivery.model.*;
-import ua.food_delivery.repository.GenericRepository;
+import ua.food_delivery.repository.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("=== Lab 5: Sorting & Comparators Demo ===\n");
 
-        System.out.println("--- Customer Repository Demonstration ---");
-        demonstrateCustomerRepository();
-
-        System.out.println("\n--- Restaurant Repository Demonstration ---");
-        demonstrateRestaurantRepository();
-
-        System.out.println("\n--- Menu Item Repository Demonstration ---");
-        demonstrateMenuItemRepository();
-
-        System.out.println("\n--- Order Repository Demonstration ---");
-        demonstrateOrderRepository();
+        try {
+            demonstrateCustomerSorting();
+            System.out.println("\n--------------------------------------------------");
+            demonstrateRestaurantSorting();
+            System.out.println("\n--------------------------------------------------");
+            demonstrateMenuItemSorting();
+            System.out.println("\n--------------------------------------------------");
+            demonstrateOrderSorting();
+        } catch (Exception e) {
+            System.err.println("CRITICAL ERROR IN MAIN:");
+            e.printStackTrace();
+        }
 
         System.out.println("\nDONE!!!");
     }
 
-    private static void demonstrateCustomerRepository() {
-        GenericRepository<Customer> customerRepo = new GenericRepository<>(
-                customer -> customer.firstName() + " " + customer.lastName(),
-                "Customer"
-        );
+    private static void demonstrateCustomerSorting() {
+        System.out.println("--- Customer Repository Sorting ---");
+        CustomerRepository repo = new CustomerRepository();
 
-        Customer c1 = Customer.createCustomer("Ivan", "Petrenko", "1 Khreshchatyk St.");
-        Customer c2 = Customer.createCustomer("Maria", "Ivanenko", "10 Shevchenko St.");
-        Customer c3_duplicate = Customer.createCustomer("Ivan", "Petrenko", "5 Kyivska St. (Different Address)");
+        // Виправлено адреси на довші, щоб пройти валідацію (min 5 символів)
+        repo.add(Customer.createCustomer("Ivan", "Zebra", "Kyiv, Main St. 1"));
+        repo.add(Customer.createCustomer("Anna", "Apple", "Lviv, Long Street Name 55"));
+        repo.add(Customer.createCustomer("Petro", "Borets", "Odesa, Sea St. 2"));
 
-        System.out.println("1. Adding Customers:");
-        customerRepo.add(c1);
-        customerRepo.add(c2);
-        customerRepo.add(c3_duplicate);
-        System.out.println("Total added (Expected 2): " + customerRepo.getAll().size());
+        System.out.println("\n1. Internal Sort by Identity (Name+Surname) ASC:");
+        repo.sortByIdentity("asc");
+        repo.getAll().forEach(System.out::println);
 
-        System.out.println("\n2. Finding by Identity (Maria Ivanenko):");
-        customerRepo.findByIdentity("Maria Ivanenko")
-                .ifPresentOrElse(
-                        c -> System.out.println("Found: " + c),
-                        () -> System.out.println("Not found")
-                );
+        System.out.println("\n2. External Sort by Last Name (Natural Order):");
+        repo.sortByName().forEach(System.out::println);
 
-        System.out.println("\n3. All Customers:");
-        customerRepo.getAll().forEach(c -> System.out.println("  - " + c));
-
-        System.out.println("\n4. Deleting (Maria Ivanenko):");
-        customerRepo.remove(c2);
-        System.out.println("Customers left: " + customerRepo.getAll().size());
-        customerRepo.findByIdentity("Maria Ivanenko")
-                .ifPresentOrElse(
-                        c -> System.out.println("Error: Customer still found!"),
-                        () -> System.out.println("'Maria Ivanenko' successfully removed.")
-                );
+        System.out.println("\n3. External Sort by Address Length:");
+        repo.sortByAddressLength().forEach(c -> System.out.println(c.firstName() + ": " + c.address()));
     }
 
-    private static void demonstrateRestaurantRepository() {
-        GenericRepository<Restaurant> restaurantRepo = new GenericRepository<>(
-                Restaurant::getName,
-                "Restaurant"
-        );
+    private static void demonstrateRestaurantSorting() {
+        System.out.println("\n--- Restaurant Repository Sorting ---");
+        RestaurantRepository repo = new RestaurantRepository();
 
-        Restaurant r1 = Restaurant.createRestaurant("Pizza Palace", CuisineType.ITALIAN, "5 Main St.");
-        Restaurant r2 = Restaurant.createRestaurant("Sushi World", CuisineType.JAPANESE, "20 Freedom Ave.");
-        Restaurant r3_duplicate = Restaurant.createRestaurant("Pizza Palace", CuisineType.AMERICAN, "Different Address");
+        repo.add(Restaurant.createRestaurant("Sushi Master", CuisineType.JAPANESE, "Kyiv, Center"));
+        repo.add(Restaurant.createRestaurant("Pasta House", CuisineType.ITALIAN, "Lviv, Rynok"));
+        repo.add(Restaurant.createRestaurant("Burger King", CuisineType.AMERICAN, "Zhitomir, Mall"));
+        repo.add(Restaurant.createRestaurant("Alfredo", CuisineType.ITALIAN, "Kyiv, Left Bank"));
 
-        System.out.println("1. Adding Restaurants:");
-        restaurantRepo.add(r1);
-        restaurantRepo.add(r2);
-        restaurantRepo.add(r3_duplicate);
-        System.out.println("Total added (Expected 2): " + restaurantRepo.getAll().size());
+        System.out.println("\n1. Internal Sort by Identity (Name) DESC:");
+        repo.sortByIdentity("desc");
+        repo.getAll().forEach(r -> System.out.println(r.getName()));
 
-        System.out.println("\n2. Finding by Identity (Sushi World):");
-        Optional<Restaurant> found = restaurantRepo.findByIdentity("Sushi World");
-        found.ifPresentOrElse(
-                r -> System.out.println("Found: " + r),
-                () -> System.out.println("Not found")
-        );
-
-        System.out.println("\n3. Finding non-existent (McDonalds):");
-        restaurantRepo.findByIdentity("McDonalds")
-                .ifPresentOrElse(
-                        r -> System.out.println("Found: " + r),
-                        () -> System.out.println("Not found")
-                );
-
-        System.out.println("\n4. All Restaurants:");
-        restaurantRepo.getAll().forEach(r -> System.out.println("  - " + r));
-
-        System.out.println("\n5. Deleting (Pizza Palace):");
-        restaurantRepo.remove(r1);
-        System.out.println("Restaurants left: " + restaurantRepo.getAll().size());
+        System.out.println("\n2. External Sort by Cuisine then Name:");
+        repo.sortByCuisineAndName().forEach(r -> System.out.println(r.getCuisineType() + " - " + r.getName()));
     }
 
-    private static void demonstrateMenuItemRepository() {
-        GenericRepository<MenuItem> menuRepo = new GenericRepository<>(
-                MenuItem::getName,
-                "MenuItem"
-        );
+    private static void demonstrateMenuItemSorting() {
+        System.out.println("\n--- MenuItem Repository Sorting ---");
+        MenuItemRepository repo = new MenuItemRepository();
 
-        MenuItem m1 = MenuItem.createMenuItem("Margherita Pizza", 150.0, "Pizza");
-        MenuItem m2 = MenuItem.createMenuItem("Philadelphia Roll", 250.0, "Sushi");
-        MenuItem m3_duplicate = MenuItem.createMenuItem("Margherita Pizza", 160.0, "Different Category");
+        repo.add(MenuItem.createMenuItem("Water", 20.0, "Drinks"));
+        repo.add(MenuItem.createMenuItem("Steak", 500.0, "Main"));
+        repo.add(MenuItem.createMenuItem("Soup", 150.0, "Starter"));
+        repo.add(MenuItem.createMenuItem("Juice", 50.0, "Drinks"));
 
-        System.out.println("1. Adding Menu Items:");
-        menuRepo.add(m1);
-        menuRepo.add(m2);
-        menuRepo.add(m3_duplicate);
-        System.out.println("Total added (Expected 2): " + menuRepo.getAll().size());
-
-        System.out.println("\n2. All Items:");
-        menuRepo.getAll().forEach(m -> System.out.println("  - " + m));
-
-        System.out.println("\n3. Finding (Philadelphia Roll):");
-        menuRepo.findByIdentity("Philadelphia Roll")
-                .ifPresent(m -> System.out.println("Found: " + m.getName() + ", Price: " + m.getPrice() + " UAH"));
+        System.out.println("\n1. External Sort by Price ASC:");
+        repo.sortByPriceAsc().forEach(m -> System.out.println(m.getName() + ": " + m.getPrice()));
     }
 
-    private static void demonstrateOrderRepository() {
-        GenericRepository<Order> orderRepo = new GenericRepository<>(
-                order -> order.getCustomer().firstName() + "|" + order.getOrderDate().toString(),
-                "Order"
-        );
+    private static void demonstrateOrderSorting() {
+        System.out.println("\n--- Order Repository Sorting ---");
+        OrderRepository repo = new OrderRepository();
 
-        Customer c1 = Customer.createCustomer("Anna", "Boiko", "100 Peace Ave.");
-        MenuItem m1 = MenuItem.createMenuItem("Coffee", 40.0, "Drinks");
-        MenuItem m2 = MenuItem.createMenuItem("Croissant", 60.0, "Pastry");
-        LocalDateTime time1 = LocalDateTime.of(2025, 10, 20, 10, 30);
-        LocalDateTime time2 = LocalDateTime.of(2025, 10, 20, 10, 45);
+        Customer c = Customer.createCustomer("Test", "User", "Valid Address 123");
+        MenuItem m1 = MenuItem.createMenuItem("Item A", 10, "Cat A");
 
-        Order o1 = Order.createOrder(c1, List.of(m1, m2), time1, OrderStatus.PENDING);
-        Order o2 = Order.createOrder(c1, List.of(m1), time2, OrderStatus.PENDING);
-        Order o3_duplicate = Order.createOrder(c1, List.of(m2), time1, OrderStatus.CONFIRMED);
+        repo.add(Order.createOrder(c, List.of(m1), LocalDateTime.now().minusDays(1), OrderStatus.DELIVERED));
+        repo.add(Order.createOrder(c, List.of(m1), LocalDateTime.now(), OrderStatus.PENDING));
 
-        System.out.println("1. Adding Orders:");
-        orderRepo.add(o1);
-        orderRepo.add(o2);
-        orderRepo.add(o3_duplicate);
-        System.out.println("Total added (Expected 2): " + orderRepo.getAll().size());
-
-        System.out.println("\n2. All Orders:");
-        orderRepo.getAll().forEach(o -> System.out.println("  - " + o.getCustomer().firstName() + " at " + o.getOrderDate()));
-
-        System.out.println("\n3. Finding Order (Anna|" + time1 + "):");
-        String searchKey = "Anna|" + time1.toString();
-        orderRepo.findByIdentity(searchKey)
-                .ifPresent(o -> System.out.println("Found order with " + o.getItems().size() + " items"));
-
-        System.out.println("\n4. Deleting Order:");
-        orderRepo.remove(o1);
-        System.out.println("Orders left: " + orderRepo.getAll().size());
+        System.out.println("\n1. External Sort by Date DESC:");
+        repo.sortByDateDesc().forEach(o -> System.out.println(o.getStatus() + " at " + o.getOrderDate()));
     }
 }

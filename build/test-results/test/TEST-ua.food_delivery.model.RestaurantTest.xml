@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ua.food_delivery.model.RestaurantTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-10-30T08:08:29.106Z" hostname="DESKTOP-13PE41B" time="0.01">
+<testsuite name="ua.food_delivery.model.RestaurantTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-11-26T17:07:36.567Z" hostname="DESKTOP-13PE41B" time="0.011">
   <properties/>
-  <testcase name="testValidRestaurantCreation()" classname="ua.food_delivery.model.RestaurantTest" time="0.003"/>
+  <testcase name="testValidRestaurantCreation()" classname="ua.food_delivery.model.RestaurantTest" time="0.004"/>
   <testcase name="testInvalidNameThrowsException()" classname="ua.food_delivery.model.RestaurantTest" time="0.001"/>
   <testcase name="testEqualsAndHashCode()" classname="ua.food_delivery.model.RestaurantTest" time="0.001"/>
   <testcase name="testInvalidCuisineTypeThrowsException()" classname="ua.food_delivery.model.RestaurantTest" time="0.001"/>
-  <testcase name="testInvalidLocationThrowsException()" classname="ua.food_delivery.model.RestaurantTest" time="0.002"/>
+  <testcase name="testInvalidLocationThrowsException()" classname="ua.food_delivery.model.RestaurantTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Order Repository Tests" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-26T17:07:36.751Z" hostname="DESKTOP-13PE41B" time="0.011">
+  <properties/>
+  <testcase name="Test Sort by Date DESC" classname="ua.food_delivery.repository.OrderRepositoryTest" time="0.005"/>
+  <testcase name="Test Sort by Items Count" classname="ua.food_delivery.repository.OrderRepositoryTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created repository for Order
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-16T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-16T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-26T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-26T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-21T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-21T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Order items. Count: 3
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.OrderRepository sortByDateDesc
+INFO: Sorted Order by date (desc)
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created repository for Order
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-16T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-16T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-26T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-26T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-21T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-21T19:07:36.751682600
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Order items. Count: 3
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.OrderRepository sortByItemsCount
+INFO: Sorted Order by items count
+]]></system-err>
+</testsuite>

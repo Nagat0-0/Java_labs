@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ua.food_delivery.util.ValidationHelperTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-10-30T08:08:29.229Z" hostname="DESKTOP-13PE41B" time="0.004">
+<testsuite name="ua.food_delivery.util.ValidationHelperTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-11-26T17:07:36.806Z" hostname="DESKTOP-13PE41B" time="0.002">
   <properties/>
-  <testcase name="testIsStringLengthBetween()" classname="ua.food_delivery.util.ValidationHelperTest" time="0.001"/>
-  <testcase name="testIsStringMatchPattern()" classname="ua.food_delivery.util.ValidationHelperTest" time="0.001"/>
+  <testcase name="testIsStringLengthBetween()" classname="ua.food_delivery.util.ValidationHelperTest" time="0.0"/>
+  <testcase name="testIsStringMatchPattern()" classname="ua.food_delivery.util.ValidationHelperTest" time="0.0"/>
   <testcase name="testIsValidList()" classname="ua.food_delivery.util.ValidationHelperTest" time="0.0"/>
   <testcase name="testIsNumberBetween()" classname="ua.food_delivery.util.ValidationHelperTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

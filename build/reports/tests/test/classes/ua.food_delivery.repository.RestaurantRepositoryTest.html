@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Restaurant Repository Tests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Restaurant Repository Tests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ua.food_delivery.repository.html">ua.food_delivery.repository</a> &gt; RestaurantRepositoryTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.014s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard error</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Test Internal Sort by Identity (Name)</td>
+<td class="success">testInternalSortByIdentity()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test External Sort by Cuisine and Name</td>
+<td class="success">testSortByCuisineAndName()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test External Sort by Location DESC</td>
+<td class="success">testSortByLocationDesc()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Restaurant
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Sushi Master
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Pasta House
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Burger King
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Alfredo
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Alfredo
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Restaurant items. Count: 4
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.RestaurantRepository sortByCuisineAndName
+INFO: Sorted Restaurant by cuisine and name
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Restaurant
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Sushi Master
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Pasta House
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Burger King
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Alfredo
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Alfredo
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository sortByIdentity
+INFO: Sorted Restaurant by identity in descending order
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Restaurant items. Count: 4
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Restaurant
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Sushi Master
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Pasta House
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Burger King
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Restaurant found with identity: Alfredo
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Alfredo
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Restaurant items. Count: 4
+нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.RestaurantRepository sortByLocationDesc
+INFO: Sorted Restaurant by location (desc)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.14</a> at 26 нояб. 2025 г., 19:07:36</p>
+</div>
+</div>
+</body>
+</html>

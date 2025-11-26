@@ -4,14 +4,17 @@ import ua.food_delivery.exception.InvalidDataException;
 import ua.food_delivery.util.OrderUtils;
 
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
-public class Order {
+public class Order implements Comparable<Order> {
     private Customer customer;
     private List<MenuItem> items;
     private LocalDateTime orderDate;
     private OrderStatus status;
+
+    public static final Comparator<Order> NATURAL_ORDER = Comparator.comparing(Order::getOrderDate);
 
     public Order() {}
 
@@ -24,30 +27,21 @@ public class Order {
     }
 
     public Customer getCustomer() { return customer; }
-
     public void setCustomer(Customer customer) throws InvalidDataException {
         if (customer == null) throw new InvalidDataException("Customer cannot be null");
         this.customer = customer;
     }
-
     public List<MenuItem> getItems() { return items; }
-
     public void setItems(List<MenuItem> items) throws InvalidDataException {
-        if (!OrderUtils.isValidItems(items)) {
-            throw new InvalidDataException("Invalid items list (must contain at least one item)");
-        }
+        if (!OrderUtils.isValidItems(items)) throw new InvalidDataException("Invalid items list");
         this.items = items;
     }
-
     public LocalDateTime getOrderDate() { return orderDate; }
-
     public void setOrderDate(LocalDateTime orderDate) throws InvalidDataException {
         if (orderDate == null) throw new InvalidDataException("Order date cannot be null");
         this.orderDate = orderDate;
     }
-
     public OrderStatus getStatus() { return status; }
-
     public void setStatus(OrderStatus status) throws InvalidDataException {
         if (status == null) throw new InvalidDataException("Order status cannot be null");
         this.status = status;
@@ -69,13 +63,13 @@ public class Order {
     }
 
     @Override
+    public int compareTo(Order other) {
+        return NATURAL_ORDER.compare(this, other);
+    }
+
+    @Override
     public String toString() {
-        return "Order{" +
-                "customer=" + customer +
-                ", items=" + items +
-                ", orderDate=" + orderDate +
-                ", status=" + status +
-                '}';
+        return "Order{customer=" + customer + ", items=" + items + ", orderDate=" + orderDate + ", status=" + status + "}";
     }
 
     @Override

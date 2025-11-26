@@ -2,12 +2,15 @@ package ua.food_delivery.model;
 
 import ua.food_delivery.exception.InvalidDataException;
 import ua.food_delivery.util.MenuItemUtils;
+import java.util.Comparator;
 import java.util.Objects;
 
-public class MenuItem {
+public class MenuItem implements Comparable<MenuItem> {
     private String name;
     private double price;
     private String category;
+
+    public static final Comparator<MenuItem> NATURAL_ORDER = Comparator.comparing(MenuItem::getName);
 
     public MenuItem() {}
 
@@ -49,12 +52,13 @@ public class MenuItem {
     }
 
     @Override
+    public int compareTo(MenuItem other) {
+        return NATURAL_ORDER.compare(this, other);
+    }
+
+    @Override
     public String toString() {
-        return "MenuItem{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", category='" + category + '\'' +
-                '}';
+        return "MenuItem{name='" + name + "', price=" + price + ", category='" + category + "'}";
     }
 
     @Override

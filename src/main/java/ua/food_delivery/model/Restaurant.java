@@ -2,12 +2,15 @@ package ua.food_delivery.model;
 
 import ua.food_delivery.exception.InvalidDataException;
 import ua.food_delivery.util.RestaurantUtils;
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Restaurant {
+public class Restaurant implements Comparable<Restaurant> {
     private String name;
     private CuisineType cuisineType;
     private String location;
+
+    public static final Comparator<Restaurant> NATURAL_ORDER = Comparator.comparing(Restaurant::getName);
 
     public Restaurant() {}
 
@@ -50,12 +53,13 @@ public class Restaurant {
     }
 
     @Override
+    public int compareTo(Restaurant other) {
+        return NATURAL_ORDER.compare(this, other);
+    }
+
+    @Override
     public String toString() {
-        return "Restaurant{" +
-                "name='" + name + '\'' +
-                ", cuisineType=" + cuisineType +
-                ", location='" + location + '\'' +
-                '}';
+        return "Restaurant{name='" + name + "', cuisineType=" + cuisineType + ", location='" + location + "'}";
     }
 
     @Override
