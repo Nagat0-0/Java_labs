@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">2</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.012s</div>
+<div class="counter">0.027s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,15 +79,27 @@
 </tr>
 </thead>
 <tr>
+<td class="success">Stream: Find in price range</td>
+<td class="success">testFindByPriceRange()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Stream: Most expensive item</td>
+<td class="success">testGetMostExpensiveItem()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">Test Sort by Category and Price DESC</td>
 <td class="success">testSortByCategoryAndPriceDesc()</td>
-<td class="success">0.007s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test Sort by Price ASC</td>
 <td class="success">testSortByPriceAsc()</td>
-<td class="success">0.005s</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -95,49 +107,89 @@
 <div class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+<pre>нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for MenuItem
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No MenuItem found with identity: Water
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added MenuItem: Water
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No MenuItem found with identity: Steak
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added MenuItem: Steak
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No MenuItem found with identity: Pasta
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added MenuItem: Pasta
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No MenuItem found with identity: Soup
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added MenuItem: Soup
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all MenuItem items. Count: 4
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.MenuItemRepository sortByCategoryAndPriceDesc
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.MenuItemRepository sortByCategoryAndPriceDesc
 INFO: Sorted MenuItem by category and price (desc)
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for MenuItem
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No MenuItem found with identity: Water
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added MenuItem: Water
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No MenuItem found with identity: Steak
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added MenuItem: Steak
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No MenuItem found with identity: Pasta
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added MenuItem: Pasta
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No MenuItem found with identity: Soup
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added MenuItem: Soup
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.MenuItemRepository lambda$getMostExpensiveItem$1
+INFO: Most expensive item: Steak (500.0)
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for MenuItem
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No MenuItem found with identity: Water
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Water
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No MenuItem found with identity: Steak
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Steak
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No MenuItem found with identity: Pasta
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Pasta
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No MenuItem found with identity: Soup
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Soup
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.MenuItemRepository findByPriceRange
+INFO: Found 2 items with price between 40,00 and 250,00
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for MenuItem
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No MenuItem found with identity: Water
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Water
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No MenuItem found with identity: Steak
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Steak
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No MenuItem found with identity: Pasta
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Pasta
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No MenuItem found with identity: Soup
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Soup
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all MenuItem items. Count: 4
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.MenuItemRepository sortByPriceAsc
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.MenuItemRepository sortByPriceAsc
 INFO: Sorted MenuItem by price (asc)
 </pre>
 </span>
@@ -150,7 +202,7 @@ INFO: Sorted MenuItem by price (asc)
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.14</a> at 26 нояб. 2025 г., 19:07:36</p>
+<a href="https://www.gradle.org">Gradle 8.14</a> at 27 нояб. 2025 г., 01:20:31</p>
 </div>
 </div>
 </body>

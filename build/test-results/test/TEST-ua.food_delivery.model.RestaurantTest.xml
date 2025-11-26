@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ua.food_delivery.model.RestaurantTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-11-26T17:07:36.567Z" hostname="DESKTOP-13PE41B" time="0.011">
+<testsuite name="ua.food_delivery.model.RestaurantTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-11-26T23:20:30.937Z" hostname="DESKTOP-13PE41B" time="0.017">
   <properties/>
-  <testcase name="testValidRestaurantCreation()" classname="ua.food_delivery.model.RestaurantTest" time="0.004"/>
+  <testcase name="testValidRestaurantCreation()" classname="ua.food_delivery.model.RestaurantTest" time="0.011"/>
   <testcase name="testInvalidNameThrowsException()" classname="ua.food_delivery.model.RestaurantTest" time="0.001"/>
   <testcase name="testEqualsAndHashCode()" classname="ua.food_delivery.model.RestaurantTest" time="0.001"/>
   <testcase name="testInvalidCuisineTypeThrowsException()" classname="ua.food_delivery.model.RestaurantTest" time="0.001"/>

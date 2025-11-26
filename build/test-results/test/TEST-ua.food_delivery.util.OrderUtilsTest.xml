@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ua.food_delivery.util.OrderUtilsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-26T17:07:36.801Z" hostname="DESKTOP-13PE41B" time="0.0">
+<testsuite name="ua.food_delivery.util.OrderUtilsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-26T23:20:31.325Z" hostname="DESKTOP-13PE41B" time="0.001">
   <properties/>
-  <testcase name="testIsValidItems()" classname="ua.food_delivery.util.OrderUtilsTest" time="0.0"/>
+  <testcase name="testIsValidItems()" classname="ua.food_delivery.util.OrderUtilsTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

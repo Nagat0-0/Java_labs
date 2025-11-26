@@ -5,6 +5,7 @@ import ua.food_delivery.model.CuisineType;
 import ua.food_delivery.model.Restaurant;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -81,6 +82,30 @@ class RestaurantRepositoryTest {
                 () -> assertTrue(sorted.get(1).getLocation().startsWith("Lviv"), "Second should be Lviv"),
                 () -> assertEquals("Kyiv, Left Bank", sorted.get(2).getLocation()),
                 () -> assertEquals("Kyiv, Center", sorted.get(3).getLocation())
+        );
+    }
+
+
+    @Test
+    @DisplayName("Stream: Find by Cuisine")
+    void testFindByCuisine() {
+        List<Restaurant> italians = restaurantRepository.findByCuisine(CuisineType.ITALIAN);
+
+        assertAll("Checking filter by cuisine",
+                () -> assertEquals(2, italians.size()),
+                () -> assertTrue(italians.stream().allMatch(r -> r.getCuisineType() == CuisineType.ITALIAN))
+        );
+    }
+
+    @Test
+    @DisplayName("Stream: Group by Cuisine")
+    void testGroupByCuisine() {
+        Map<CuisineType, List<Restaurant>> grouped = restaurantRepository.groupByCuisine();
+
+        assertAll("Checking grouping",
+                () -> assertEquals(3, grouped.size()),
+                () -> assertEquals(2, grouped.get(CuisineType.ITALIAN).size()),
+                () -> assertEquals(1, grouped.get(CuisineType.AMERICAN).size())
         );
     }
 }

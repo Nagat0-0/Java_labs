@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ua.food_delivery.util.FileReaderUtilTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-11-26T17:07:36.786Z" hostname="DESKTOP-13PE41B" time="0.008">
+<testsuite name="ua.food_delivery.util.FileReaderUtilTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-11-26T23:20:31.295Z" hostname="DESKTOP-13PE41B" time="0.021">
   <properties/>
-  <testcase name="testReadMenuItemsFromMissingFileThrows()" classname="ua.food_delivery.util.FileReaderUtilTest" time="0.003"/>
+  <testcase name="testReadMenuItemsFromMissingFileThrows()" classname="ua.food_delivery.util.FileReaderUtilTest" time="0.017"/>
   <testcase name="testReadCustomersFromMissingFileThrows()" classname="ua.food_delivery.util.FileReaderUtilTest" time="0.002"/>
   <testcase name="testReadRestaurantsFromMissingFileThrows()" classname="ua.food_delivery.util.FileReaderUtilTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[нояб. 26, 2025 7:07:36 PM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
+  <system-err><![CDATA[нояб. 27, 2025 1:20:31 AM ua.food_delivery.util.FileReaderUtil readMenuItemsFromFile
 INFO: Finished reading menu items file.
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.util.FileReaderUtil readCustomersFromFile
 INFO: Finished reading customers file.
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
 INFO: Finished reading restaurants file.
 ]]></system-err>
 </testsuite>

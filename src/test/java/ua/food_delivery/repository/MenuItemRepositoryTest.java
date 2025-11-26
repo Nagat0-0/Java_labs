@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 import ua.food_delivery.model.MenuItem;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,6 +34,7 @@ class MenuItemRepositoryTest {
         menuItemRepository.add(m3_MediumMain);
         menuItemRepository.add(m4_CheapStarter);
     }
+
 
     @Test
     @DisplayName("Test Sort by Price ASC")
@@ -65,5 +67,28 @@ class MenuItemRepositoryTest {
 
                 () -> assertEquals("Starter", sorted.get(3).getCategory())
         );
+    }
+
+
+    @Test
+    @DisplayName("Stream: Find in price range")
+    void testFindByPriceRange() {
+        List<MenuItem> result = menuItemRepository.findByPriceRange(40, 250);
+
+        assertAll("Checking price range filtering",
+                () -> assertEquals(2, result.size()),
+                () -> assertTrue(result.stream().anyMatch(m -> m.getName().equals("Soup"))),
+                () -> assertTrue(result.stream().anyMatch(m -> m.getName().equals("Pasta")))
+        );
+    }
+
+    @Test
+    @DisplayName("Stream: Most expensive item")
+    void testGetMostExpensiveItem() {
+        Optional<MenuItem> max = menuItemRepository.getMostExpensiveItem();
+
+        assertTrue(max.isPresent());
+        assertEquals("Steak", max.get().getName());
+        assertEquals(500.0, max.get().getPrice());
     }
 }

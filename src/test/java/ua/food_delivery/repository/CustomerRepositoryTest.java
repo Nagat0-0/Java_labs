@@ -3,6 +3,7 @@ package ua.food_delivery.repository;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import ua.food_delivery.model.Customer;
 
@@ -23,9 +24,7 @@ class CustomerRepositoryTest {
     @BeforeAll
     void setUpTestData() {
         c1_IvanZebra = Customer.createCustomer("Ivan", "Zebra", "Kyiv, Short St.");
-
         c2_AnnaApple = Customer.createCustomer("Anna", "Apple", "Lviv, Very Long Street Name");
-
         c3_PetroBorets = Customer.createCustomer("Petro", "Borets", "Odesa, Mid Street");
     }
 
@@ -98,6 +97,33 @@ class CustomerRepositoryTest {
                 () -> assertDoesNotThrow(() -> emptyRepo.sortByIdentity("asc")),
                 () -> assertTrue(emptyRepo.sortByName().isEmpty()),
                 () -> assertTrue(emptyRepo.sortByAddressLength().isEmpty())
+        );
+    }
+
+
+    @ParameterizedTest
+    @CsvSource({
+            "Kyiv, 1",
+            "Street, 2",
+            "St, 3",
+            "Berlin, 0"
+    })
+    @DisplayName("Stream: Find by address fragment")
+    void testFindByAddressContaining(String fragment, int expectedCount) {
+        List<Customer> result = customerRepository.findByAddressContaining(fragment);
+        assertEquals(expectedCount, result.size(), "Failed search for: " + fragment);
+    }
+
+    @Test
+    @DisplayName("Stream: Get all full names uppercase")
+    void testGetAllFullNamesUpperCase() {
+        List<String> names = customerRepository.getAllFullNamesUpperCase();
+
+        assertAll("Checking Uppercase Mapping",
+                () -> assertEquals(3, names.size()),
+                () -> assertTrue(names.contains("ANNA APPLE")),
+                () -> assertTrue(names.contains("IVAN ZEBRA")),
+                () -> assertTrue(names.contains("PETRO BORETS"))
         );
     }
 }

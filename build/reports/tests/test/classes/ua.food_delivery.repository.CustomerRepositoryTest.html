@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">6</div>
+<div class="counter">11</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.090s</div>
+<div class="counter">0.136s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,25 +81,55 @@
 <tr>
 <td class="success">Test Sorting on Empty Repository</td>
 <td class="success">testEmptyRepositorySorting()</td>
-<td class="success">0.011s</td>
+<td class="success">0.013s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test External Sort by Address Length</td>
 <td class="success">testExternalSortByAddressLength()</td>
-<td class="success">0.005s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test External Sort by Name (Natural Order)</td>
 <td class="success">testExternalSortByName()</td>
-<td class="success">0.040s</td>
+<td class="success">0.043s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] Kyiv, 1</td>
+<td class="success">testFindByAddressContaining(String, int)[1]</td>
+<td class="success">0.027s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] Street, 2</td>
+<td class="success">testFindByAddressContaining(String, int)[2]</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] St, 3</td>
+<td class="success">testFindByAddressContaining(String, int)[3]</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] Berlin, 0</td>
+<td class="success">testFindByAddressContaining(String, int)[4]</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Stream: Get all full names uppercase</td>
+<td class="success">testGetAllFullNamesUpperCase()</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Order 'asc': Expect [Anna Apple, Ivan Zebra, Petro Borets]</td>
 <td class="success">testInternalSortByIdentity(String, String, String, String)[1]</td>
-<td class="success">0.024s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -111,7 +141,7 @@
 <tr>
 <td class="success">Order 'invalid_input': Expect [Anna Apple, Ivan Zebra, Petro Borets]</td>
 <td class="success">testInternalSortByIdentity(String, String, String, String)[3]</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -119,124 +149,204 @@
 <div class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+<pre>нояб. 27, 2025 1:20:30 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for Customer
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:30 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:30 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:30 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:30 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:30 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:30 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:30 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Customer items. Count: 3
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.CustomerRepository sortByName
+нояб. 27, 2025 1:20:30 AM ua.food_delivery.repository.CustomerRepository sortByName
 INFO: Sorted Customer by last name and first name
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Customer items. Count: 3
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for Customer
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for Customer
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository sortByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository sortByIdentity
 INFO: Sorted Customer by identity in ascending order
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Customer items. Count: 0
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.CustomerRepository sortByName
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.CustomerRepository sortByName
 INFO: Sorted Customer by last name and first name
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Customer items. Count: 0
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.CustomerRepository sortByAddressLength
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.CustomerRepository sortByAddressLength
 INFO: Sorted Customer by address length
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for Customer
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository sortByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.CustomerRepository findByAddressContaining
+INFO: Found 1 customers with address containing 'Kyiv'
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Customer
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.CustomerRepository findByAddressContaining
+INFO: Found 2 customers with address containing 'Street'
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Customer
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.CustomerRepository findByAddressContaining
+INFO: Found 3 customers with address containing 'St'
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Customer
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.CustomerRepository findByAddressContaining
+INFO: Found 0 customers with address containing 'Berlin'
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Customer
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository sortByIdentity
 INFO: Sorted Customer by identity in ascending order
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Customer items. Count: 3
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for Customer
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository sortByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository sortByIdentity
 INFO: Sorted Customer by identity in descending order
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Customer items. Count: 3
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for Customer
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository sortByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository sortByIdentity
 INFO: Sorted Customer by identity in ascending order
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Customer items. Count: 3
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for Customer
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Ivan Zebra
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Anna Apple
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Customer found with identity: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Customer: Petro Borets
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Customer items. Count: 3
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.CustomerRepository sortByAddressLength
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.CustomerRepository sortByAddressLength
 INFO: Sorted Customer by address length
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Customer
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Customer found with identity: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Petro Borets
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.CustomerRepository getAllFullNamesUpperCase
+INFO: Retrieved 3 customer names in UPPERCASE
 </pre>
 </span>
 </div>
@@ -248,7 +358,7 @@ INFO: Sorted Customer by address length
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.14</a> at 26 нояб. 2025 г., 19:07:36</p>
+<a href="https://www.gradle.org">Gradle 8.14</a> at 27 нояб. 2025 г., 01:20:31</p>
 </div>
 </div>
 </body>

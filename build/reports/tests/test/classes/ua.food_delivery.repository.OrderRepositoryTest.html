@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">2</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.010s</div>
+<div class="counter">0.026s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,15 +79,27 @@
 </tr>
 </thead>
 <tr>
+<td class="success">Stream: Calculate Total Revenue</td>
+<td class="success">testCalculateTotalRevenue()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Stream: Find by Status</td>
+<td class="success">testFindByStatus()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">Test Sort by Date DESC</td>
 <td class="success">testSortByDateDesc()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test Sort by Items Count</td>
 <td class="success">testSortByItemsCount()</td>
-<td class="success">0.005s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -95,42 +107,74 @@
 <div class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+<pre>нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for Order
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No Order found with identity: User_2025-11-16T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
-INFO: Added Order: User_2025-11-16T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No Order found with identity: User_2025-11-26T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
-INFO: Added Order: User_2025-11-26T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No Order found with identity: User_2025-11-21T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
-INFO: Added Order: User_2025-11-21T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-17T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-17T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-27T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-22T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-22T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.OrderRepository findByStatus
+INFO: Found 1 orders with status PENDING
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Order
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-17T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-17T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-27T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-22T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-22T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Order items. Count: 3
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.OrderRepository sortByDateDesc
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.OrderRepository sortByDateDesc
 INFO: Sorted Order by date (desc)
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
 INFO: Created repository for Order
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No Order found with identity: User_2025-11-16T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
-INFO: Added Order: User_2025-11-16T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No Order found with identity: User_2025-11-26T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
-INFO: Added Order: User_2025-11-26T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No Order found with identity: User_2025-11-21T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository add
-INFO: Added Order: User_2025-11-21T19:07:36.751682600
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-17T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-17T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-27T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-22T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-22T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Order items. Count: 3
-нояб. 26, 2025 7:07:36 PM ua.food_delivery.repository.OrderRepository sortByItemsCount
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.OrderRepository sortByItemsCount
 INFO: Sorted Order by items count
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository &lt;init&gt;
+INFO: Created repository for Order
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-17T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-17T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-27T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No Order found with identity: User_2025-11-22T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-22T01:20:31.222273300
+нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.OrderRepository calculateTotalRevenue
+INFO: Total revenue calculated: 60.0
 </pre>
 </span>
 </div>
@@ -142,7 +186,7 @@ INFO: Sorted Order by items count
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.14</a> at 26 нояб. 2025 г., 19:07:36</p>
+<a href="https://www.gradle.org">Gradle 8.14</a> at 27 нояб. 2025 г., 01:20:31</p>
 </div>
 </div>
 </body>

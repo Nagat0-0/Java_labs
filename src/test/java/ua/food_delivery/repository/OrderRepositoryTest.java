@@ -48,6 +48,7 @@ class OrderRepositoryTest {
         orderRepository.add(o3_Mid_Medium);
     }
 
+
     @Test
     @DisplayName("Test Sort by Date DESC")
     void testSortByDateDesc() {
@@ -70,5 +71,24 @@ class OrderRepositoryTest {
                 () -> assertEquals(2, sorted.get(1).getItems().size()),
                 () -> assertEquals(3, sorted.get(2).getItems().size())
         );
+    }
+
+    @Test
+    @DisplayName("Stream: Find by Status")
+    void testFindByStatus() {
+        List<Order> pending = orderRepository.findByStatus(OrderStatus.PENDING);
+
+        assertAll("Checking find by status",
+                () -> assertEquals(1, pending.size()),
+                () -> assertEquals(o2_New_Big, pending.get(0))
+        );
+    }
+
+    @Test
+    @DisplayName("Stream: Calculate Total Revenue")
+    void testCalculateTotalRevenue() {
+
+        double total = orderRepository.calculateTotalRevenue();
+        assertEquals(60.0, total, 0.001);
     }
 }
