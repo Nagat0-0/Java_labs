@@ -1,117 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Restaurant Repository Tests" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-11-26T23:20:31.252Z" hostname="DESKTOP-13PE41B" time="0.032">
+<testsuite name="Restaurant Repository Tests" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-11-27T01:49:57.020Z" hostname="DESKTOP-13PE41B" time="0.034">
   <properties/>
-  <testcase name="Test External Sort by Cuisine and Name" classname="ua.food_delivery.repository.RestaurantRepositoryTest" time="0.006"/>
-  <testcase name="Test Internal Sort by Identity (Name)" classname="ua.food_delivery.repository.RestaurantRepositoryTest" time="0.006"/>
+  <testcase name="Test External Sort by Cuisine and Name" classname="ua.food_delivery.repository.RestaurantRepositoryTest" time="0.007"/>
+  <testcase name="Test Internal Sort by Identity (Name)" classname="ua.food_delivery.repository.RestaurantRepositoryTest" time="0.005"/>
   <testcase name="Stream: Find by Cuisine" classname="ua.food_delivery.repository.RestaurantRepositoryTest" time="0.005"/>
-  <testcase name="Stream: Group by Cuisine" classname="ua.food_delivery.repository.RestaurantRepositoryTest" time="0.007"/>
-  <testcase name="Test External Sort by Location DESC" classname="ua.food_delivery.repository.RestaurantRepositoryTest" time="0.007"/>
+  <testcase name="Stream: Group by Cuisine" classname="ua.food_delivery.repository.RestaurantRepositoryTest" time="0.006"/>
+  <testcase name="Test External Sort by Location DESC" classname="ua.food_delivery.repository.RestaurantRepositoryTest" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository <init>
+  <system-err><![CDATA[нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for Restaurant
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Restaurant items. Count: 4
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.RestaurantRepository sortByCuisineAndName
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.RestaurantRepository sortByCuisineAndName
 INFO: Sorted Restaurant by cuisine and name
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for Restaurant
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository sortByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository sortByIdentity
 INFO: Sorted Restaurant by identity in descending order
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Restaurant items. Count: 4
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for Restaurant
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.RestaurantRepository findByCuisine
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.RestaurantRepository findByCuisine
 INFO: Found 2 restaurants with cuisine ITALIAN
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for Restaurant
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.RestaurantRepository groupByCuisine
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.RestaurantRepository groupByCuisine
 INFO: Grouped restaurants by cuisine: 3 groups
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for Restaurant
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Sushi Master
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Pasta House
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Burger King
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository findByIdentity
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository findByIdentity
 INFO: No Restaurant found with identity: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository add
 INFO: Added Restaurant: Alfredo
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all Restaurant items. Count: 4
-нояб. 27, 2025 1:20:31 AM ua.food_delivery.repository.RestaurantRepository sortByLocationDesc
+нояб. 27, 2025 3:49:57 AM ua.food_delivery.repository.RestaurantRepository sortByLocationDesc
 INFO: Sorted Restaurant by location (desc)
 ]]></system-err>
 </testsuite>

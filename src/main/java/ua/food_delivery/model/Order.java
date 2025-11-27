@@ -2,6 +2,7 @@ package ua.food_delivery.model;
 
 import ua.food_delivery.exception.InvalidDataException;
 import ua.food_delivery.util.OrderUtils;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.time.LocalDateTime;
 import java.util.Comparator;
@@ -52,6 +53,7 @@ public class Order implements Comparable<Order> {
         return new Order(customer, items, orderDate, status);
     }
 
+    @JsonIgnore
     public String getStatusDescription() {
         return switch (status) {
             case PENDING -> "Order is pending confirmation.";
