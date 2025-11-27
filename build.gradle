@@ -17,6 +17,14 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.0'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.0'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.0'
+
+    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    implementation 'org.glassfish:jakarta.el:4.0.2'
+
+    testImplementation 'org.assertj:assertj-core:3.25.1'
+    implementation 'org.slf4j:slf4j-api:2.0.12'
+    runtimeOnly 'ch.qos.logback:logback-classic:1.4.14'
 }
 
 test {

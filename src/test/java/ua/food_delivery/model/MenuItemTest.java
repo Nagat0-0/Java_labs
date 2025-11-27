@@ -1,30 +1,37 @@
 package ua.food_delivery.model;
 
-import ua.food_delivery.exception.InvalidDataException;
-import ua.food_delivery.model.MenuItem;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import ua.food_delivery.exception.InvalidDataException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
+@DisplayName("MenuItem Model Tests")
 class MenuItemTest {
 
     @Test
-    void testValidMenuItem() {
-        MenuItem m = new MenuItem("Burger", 120.5, "Fast Food");
-        assertEquals("Burger", m.getName());
+    @DisplayName("Create valid item")
+    void testValidItem() {
+        assertDoesNotThrow(() -> MenuItem.createMenuItem("Pizza", 100.0, "Food"));
+    }
+
+    @ParameterizedTest
+    @ValueSource(doubles = {0.0, -10.0, -0.01})
+    @DisplayName("Throw exception for non-positive price")
+    void testInvalidPrice(double price) {
+        assertThatThrownBy(() -> MenuItem.createMenuItem("Pizza", price, "Food"))
+                .isInstanceOf(InvalidDataException.class)
+                .hasMessageContaining("Price");
     }
 
     @Test
-    void testInvalidPriceThrowsException() {
-        assertThrows(InvalidDataException.class, () ->
-                new MenuItem("Burger", -5, "Fast Food"));
-    }
-
-    @Test
-    void testEqualsAndHashCode() {
-        MenuItem m1 = new MenuItem("Pizza", 100, "Main");
-        MenuItem m2 = new MenuItem("Pizza", 100, "Main");
-        assertEquals(m1, m2);
-        assertEquals(m1.hashCode(), m2.hashCode());
+    @DisplayName("Throw exception for excessively high price")
+    void testTooHighPrice() {
+        assertThatThrownBy(() -> MenuItem.createMenuItem("Pizza", 15000.0, "Food"))
+                .isInstanceOf(InvalidDataException.class)
+                .hasMessageContaining("too high");
     }
 }

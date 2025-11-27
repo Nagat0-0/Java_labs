@@ -22,48 +22,47 @@ class GenericRepositoryTest {
                 "TestCustomer"
         );
 
-
-        c1 = Customer.createCustomer("Тест", "Один", "Адреса 1");
-        c2 = Customer.createCustomer("Тест", "Два", "Адреса 2");
+        c1 = Customer.createCustomer("John", "Doe", "Address One");
+        c2 = Customer.createCustomer("Jane", "Smith", "Address Two");
     }
 
     @Test
     void testAddAndFindByIdentity() {
         boolean added = customerRepo.add(c1);
 
-        assertTrue(added, "Додавання має повернути true");
-        Optional<Customer> found = customerRepo.findByIdentity("Тест Один");
+        assertTrue(added);
+        Optional<Customer> found = customerRepo.findByIdentity("John Doe");
 
-        assertTrue(found.isPresent(), "Клієнт має бути знайдений");
-        assertEquals(c1, found.get(), "Знайдений клієнт має відповідати доданому");
+        assertTrue(found.isPresent());
+        assertEquals(c1, found.get());
     }
 
     @Test
     void testFindByIdentityNotFound() {
         customerRepo.add(c1);
-        Optional<Customer> found = customerRepo.findByIdentity("Неіснуючий Клієнт");
+        Optional<Customer> found = customerRepo.findByIdentity("Non Existent");
 
-        assertTrue(found.isEmpty(), "Optional має бути порожнім");
+        assertTrue(found.isEmpty());
     }
 
     @Test
     void testAddDuplicate() {
         boolean addedFirst = customerRepo.add(c1);
 
-        Customer c1Duplicate = Customer.createCustomer("Тест", "Один", "Інша Адреса 3");
+        Customer c1Duplicate = Customer.createCustomer("John", "Doe", "Different Address");
 
         boolean addedSecond = customerRepo.add(c1Duplicate);
 
-        assertTrue(addedFirst, "Перше додавання має бути успішним");
-        assertFalse(addedSecond, "Додавання дублікату має повернути false");
-        assertEquals(1, customerRepo.getAll().size(), "Репозиторій має містити лише один екземпляр");
+        assertTrue(addedFirst);
+        assertFalse(addedSecond);
+        assertEquals(1, customerRepo.getAll().size());
     }
 
     @Test
     void testAddNull() {
         boolean added = customerRepo.add(null);
-        assertFalse(added, "Додавання null має повернути false");
-        assertEquals(0, customerRepo.getAll().size(), "Репозиторій має бути порожнім");
+        assertFalse(added);
+        assertEquals(0, customerRepo.getAll().size());
     }
 
     @Test
@@ -71,14 +70,14 @@ class GenericRepositoryTest {
         customerRepo.add(c1);
         customerRepo.add(c2);
 
-        assertTrue(customerRepo.findByIdentity("Тест Два").isPresent());
+        assertTrue(customerRepo.findByIdentity("Jane Smith").isPresent());
 
         boolean removed = customerRepo.remove(c2);
 
-        assertTrue(removed, "Видалення має повернути true");
-        assertTrue(customerRepo.findByIdentity("Тест Два").isEmpty(), "Клієнт c2 має бути видалений");
-        assertEquals(1, customerRepo.getAll().size(), "Розмір репозиторію має бути 1");
-        assertTrue(customerRepo.findByIdentity("Тест Один").isPresent(), "Клієнт c1 має залишитись");
+        assertTrue(removed);
+        assertTrue(customerRepo.findByIdentity("Jane Smith").isEmpty());
+        assertEquals(1, customerRepo.getAll().size());
+        assertTrue(customerRepo.findByIdentity("John Doe").isPresent());
     }
 
     @Test
@@ -87,7 +86,7 @@ class GenericRepositoryTest {
 
         boolean removed = customerRepo.remove(c2);
 
-        assertFalse(removed, "Видалення неіснуючого об'єкта має повернути false");
+        assertFalse(removed);
         assertEquals(1, customerRepo.getAll().size());
     }
 

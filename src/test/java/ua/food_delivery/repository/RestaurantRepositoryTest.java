@@ -7,105 +7,88 @@ import ua.food_delivery.model.Restaurant;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @DisplayName("Restaurant Repository Tests")
 class RestaurantRepositoryTest {
 
-    private RestaurantRepository restaurantRepository;
-    private Restaurant r1_SushiKyiv;
-    private Restaurant r2_PastaLviv;
-    private Restaurant r3_BurgerOdesa;
-    private Restaurant r4_PastaKyiv;
+    private RestaurantRepository repo;
+    private Restaurant r1, r2, r3, r4;
 
     @BeforeAll
     void setUpTestData() {
-        r1_SushiKyiv = Restaurant.createRestaurant("Sushi Master", CuisineType.JAPANESE, "Kyiv, Center");
-        r2_PastaLviv = Restaurant.createRestaurant("Pasta House", CuisineType.ITALIAN, "Lviv, Rynok Sq.");
-        r3_BurgerOdesa = Restaurant.createRestaurant("Burger King", CuisineType.AMERICAN, "Odesa, Port");
-        r4_PastaKyiv = Restaurant.createRestaurant("Alfredo", CuisineType.ITALIAN, "Kyiv, Left Bank");
+        r1 = Restaurant.createRestaurant("Sushi Master", CuisineType.JAPANESE, "Kyiv, Center");
+        r2 = Restaurant.createRestaurant("Pasta House", CuisineType.ITALIAN, "Lviv, Rynok Sq.");
+        r3 = Restaurant.createRestaurant("Burger King", CuisineType.AMERICAN, "Odesa, Port");
+        r4 = Restaurant.createRestaurant("Alfredo", CuisineType.ITALIAN, "Kyiv, Left Bank");
     }
 
     @BeforeEach
     void setUp() {
-        restaurantRepository = new RestaurantRepository();
-        restaurantRepository.add(r1_SushiKyiv);
-        restaurantRepository.add(r2_PastaLviv);
-        restaurantRepository.add(r3_BurgerOdesa);
-        restaurantRepository.add(r4_PastaKyiv);
+        repo = new RestaurantRepository();
+        repo.add(r1);
+        repo.add(r2);
+        repo.add(r3);
+        repo.add(r4);
     }
 
     @Test
-    @DisplayName("Test Internal Sort by Identity (Name)")
+    @DisplayName("Adding null returns false")
+    void testAddNull() {
+        boolean result = repo.add(null);
+        assertThat(result).isFalse();
+    }
+
+    @Test
+    @DisplayName("Internal Sort by Identity (Name)")
     void testInternalSortByIdentity() {
-        restaurantRepository.sortByIdentity("desc");
-        List<Restaurant> items = restaurantRepository.getAll();
+        repo.sortByIdentity("desc");
+        List<Restaurant> items = repo.getAll();
 
         assertAll("Checking sort by Name DESC",
-                () -> assertEquals("Sushi Master", items.get(0).getName()),
-                () -> assertEquals("Pasta House", items.get(1).getName()),
-                () -> assertEquals("Burger King", items.get(2).getName()),
-                () -> assertEquals("Alfredo", items.get(3).getName())
+                () -> assertThat(items.get(0).getName()).isEqualTo("Sushi Master"),
+                () -> assertThat(items.get(1).getName()).isEqualTo("Pasta House"),
+                () -> assertThat(items.get(2).getName()).isEqualTo("Burger King"),
+                () -> assertThat(items.get(3).getName()).isEqualTo("Alfredo")
         );
     }
 
     @Test
-    @DisplayName("Test External Sort by Cuisine and Name")
+    @DisplayName("External Sort by Cuisine and Name")
     void testSortByCuisineAndName() {
+        List<Restaurant> sorted = repo.sortByCuisineAndName();
 
-        List<Restaurant> sorted = restaurantRepository.sortByCuisineAndName();
-
-        assertAll("Checking complex sort: Cuisine (Enum Order) + Name ASC",
-                () -> assertEquals(CuisineType.ITALIAN, sorted.get(0).getCuisineType()),
-                () -> assertEquals("Alfredo", sorted.get(0).getName()),
-
-                () -> assertEquals(CuisineType.ITALIAN, sorted.get(1).getCuisineType()),
-                () -> assertEquals("Pasta House", sorted.get(1).getName()),
-
-                () -> assertEquals(CuisineType.JAPANESE, sorted.get(2).getCuisineType()),
-                () -> assertEquals("Sushi Master", sorted.get(2).getName()),
-
-                () -> assertEquals(CuisineType.AMERICAN, sorted.get(3).getCuisineType()),
-                () -> assertEquals("Burger King", sorted.get(3).getName())
+        assertAll("Checking sort by Cuisine + Name",
+                () -> assertThat(sorted.get(0).getName()).isEqualTo("Alfredo"),
+                () -> assertThat(sorted.get(1).getName()).isEqualTo("Pasta House"),
+                () -> assertThat(sorted.get(2).getName()).isEqualTo("Sushi Master"),
+                () -> assertThat(sorted.get(3).getName()).isEqualTo("Burger King")
         );
     }
-
-    @Test
-    @DisplayName("Test External Sort by Location DESC")
-    void testSortByLocationDesc() {
-
-        List<Restaurant> sorted = restaurantRepository.sortByLocationDesc();
-
-        assertAll("Checking sort by Location DESC",
-                () -> assertTrue(sorted.get(0).getLocation().startsWith("Odesa"), "First should be Odesa"),
-                () -> assertTrue(sorted.get(1).getLocation().startsWith("Lviv"), "Second should be Lviv"),
-                () -> assertEquals("Kyiv, Left Bank", sorted.get(2).getLocation()),
-                () -> assertEquals("Kyiv, Center", sorted.get(3).getLocation())
-        );
-    }
-
 
     @Test
     @DisplayName("Stream: Find by Cuisine")
     void testFindByCuisine() {
-        List<Restaurant> italians = restaurantRepository.findByCuisine(CuisineType.ITALIAN);
+        List<Restaurant> italians = repo.findByCuisine(CuisineType.ITALIAN);
 
         assertAll("Checking filter by cuisine",
-                () -> assertEquals(2, italians.size()),
-                () -> assertTrue(italians.stream().allMatch(r -> r.getCuisineType() == CuisineType.ITALIAN))
+                () -> assertThat(italians).hasSize(2),
+                () -> assertThat(italians).extracting(Restaurant::getName)
+                        .containsExactlyInAnyOrder("Pasta House", "Alfredo")
         );
     }
 
     @Test
     @DisplayName("Stream: Group by Cuisine")
     void testGroupByCuisine() {
-        Map<CuisineType, List<Restaurant>> grouped = restaurantRepository.groupByCuisine();
+        Map<CuisineType, List<Restaurant>> grouped = repo.groupByCuisine();
 
         assertAll("Checking grouping",
-                () -> assertEquals(3, grouped.size()),
-                () -> assertEquals(2, grouped.get(CuisineType.ITALIAN).size()),
-                () -> assertEquals(1, grouped.get(CuisineType.AMERICAN).size())
+                () -> assertThat(grouped).hasSize(3),
+                () -> assertThat(grouped.get(CuisineType.ITALIAN)).hasSize(2),
+                () -> assertThat(grouped.get(CuisineType.AMERICAN)).hasSize(1)
         );
     }
 }

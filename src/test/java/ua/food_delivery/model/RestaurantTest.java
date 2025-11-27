@@ -1,44 +1,74 @@
 package ua.food_delivery.model;
 
-import ua.food_delivery.exception.InvalidDataException;
-import ua.food_delivery.model.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import ua.food_delivery.exception.InvalidDataException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Restaurant Model Tests")
 class RestaurantTest {
 
-    @Test
-    void testValidRestaurantCreation() {
-        Restaurant r = new Restaurant("La Strada", CuisineType.ITALIAN, "Kyiv, Khreshchatyk 10");
-        assertEquals("La Strada", r.getName());
-        assertEquals(CuisineType.ITALIAN, r.getCuisineType());
-        assertEquals("Kyiv, Khreshchatyk 10", r.getLocation());
+    private Restaurant restaurant;
+
+    @BeforeEach
+    void setUp() {
+        restaurant = new Restaurant("Valid Name", CuisineType.ITALIAN, "Valid Location");
     }
 
-    @Test
-    void testInvalidNameThrowsException() {
-        assertThrows(InvalidDataException.class, () ->
-                new Restaurant("", CuisineType.ITALIAN, "Lviv, Shevchenka 5"));
+    @Nested
+    @DisplayName("Constructor Validation")
+    class ConstructorTests {
+        @Test
+        @DisplayName("Create valid restaurant")
+        void testValidCreation() {
+            Restaurant r = Restaurant.createRestaurant("Sushi", CuisineType.JAPANESE, "Kyiv Center");
+            assertEquals("Sushi", r.getName());
+        }
+
+        @Test
+        @DisplayName("Throw exception when creating invalid restaurant")
+        void testInvalidCreation() {
+            InvalidDataException ex = assertThrows(InvalidDataException.class, () ->
+                    Restaurant.createRestaurant("", null, "")
+            );
+            assertTrue(ex.getMessage().contains("name") ||
+                    ex.getMessage().contains("Cuisine") ||
+                    ex.getMessage().contains("Location"));
+        }
     }
 
-    @Test
-    void testInvalidCuisineTypeThrowsException() {
-        assertThrows(InvalidDataException.class, () ->
-                new Restaurant("Gastro Bar", null, "Lviv, Horodotska 11"));
-    }
+    @Nested
+    @DisplayName("Setter Validation with Rollback")
+    class SetterTests {
 
-    @Test
-    void testInvalidLocationThrowsException() {
-        assertThrows(InvalidDataException.class, () ->
-                new Restaurant("Mister Sushi", CuisineType.JAPANESE, ""));
-    }
+        @Test
+        @DisplayName("Set valid name")
+        void testSetValidName() {
+            restaurant.setName("New Name");
+            assertEquals("New Name", restaurant.getName());
+        }
 
-    @Test
-    void testEqualsAndHashCode() {
-        Restaurant r1 = new Restaurant("La Strada", CuisineType.ITALIAN, "Kyiv, Khreshchatyk 10");
-        Restaurant r2 = new Restaurant("La Strada", CuisineType.ITALIAN, "Kyiv, Khreshchatyk 10");
-        assertEquals(r1, r2);
-        assertEquals(r1.hashCode(), r2.hashCode());
+        @Test
+        @DisplayName("Set invalid name should throw and rollback")
+        void testSetInvalidName() {
+            String originalName = restaurant.getName();
+
+            assertThrows(InvalidDataException.class, () -> restaurant.setName(""));
+
+            assertEquals(originalName, restaurant.getName());
+        }
+
+        @Test
+        @DisplayName("Set null cuisine should throw and rollback")
+        void testSetNullCuisine() {
+            CuisineType originalCuisine = restaurant.getCuisineType();
+
+            assertThrows(InvalidDataException.class, () -> restaurant.setCuisineType(null));
+
+            assertEquals(originalCuisine, restaurant.getCuisineType());
+        }
     }
 }

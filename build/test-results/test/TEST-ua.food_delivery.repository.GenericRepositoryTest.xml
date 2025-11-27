@@ -1,89 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ua.food_delivery.repository.GenericRepositoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-11-27T01:49:56.932Z" hostname="DESKTOP-13PE41B" time="0.03">
+<testsuite name="ua.food_delivery.repository.GenericRepositoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-11-27T20:50:33.687Z" hostname="DESKTOP-13PE41B" time="0.027">
   <properties/>
-  <testcase name="testAddNull()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.003"/>
-  <testcase name="testRemoveNonExistent()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.004"/>
-  <testcase name="testAddAndFindByIdentity()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.003"/>
+  <testcase name="testAddNull()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.002"/>
+  <testcase name="testRemoveNonExistent()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.01"/>
+  <testcase name="testAddAndFindByIdentity()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.002"/>
   <testcase name="testFindByIdentityNotFound()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.002"/>
-  <testcase name="testGetAll()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.005"/>
-  <testcase name="testRemove()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.006"/>
-  <testcase name="testAddDuplicate()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository <init>
+  <testcase name="testGetAll()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.003"/>
+  <testcase name="testRemove()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.003"/>
+  <testcase name="testAddDuplicate()" classname="ua.food_delivery.repository.GenericRepositoryTest" time="0.002"/>
+  <system-out><![CDATA[22:50:33.688 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: John Doe
+22:50:33.688 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: Jane Smith
+22:50:33.690 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: John Doe
+22:50:33.690 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: Jane Smith
+22:50:33.701 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: John Doe
+22:50:33.701 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: Jane Smith
+22:50:33.703 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: John Doe
+22:50:33.703 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: Jane Smith
+22:50:33.705 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: John Doe
+22:50:33.705 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: Jane Smith
+22:50:33.708 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: John Doe
+22:50:33.709 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: Jane Smith
+22:50:33.712 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: John Doe
+22:50:33.713 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: Jane Smith
+22:50:33.713 [Test worker] INFO ua.food_delivery.model.Customer -- Customer record initialized: John Doe
+]]></system-out>
+  <system-err><![CDATA[нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for TestCustomer
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
 WARNING: Attempted to add null TestCustomer
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all TestCustomer items. Count: 0
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for TestCustomer
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
-INFO: Added TestCustomer: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository remove
-WARNING: Failed to remove TestCustomer: Тест Два
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository remove
+WARNING: Failed to remove TestCustomer: Jane Smith
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all TestCustomer items. Count: 1
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for TestCustomer
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
-INFO: Added TestCustomer: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: Found TestCustomer with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: Found TestCustomer with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for TestCustomer
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
-INFO: Added TestCustomer: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Неіснуючий Клієнт
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: Non Existent
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for TestCustomer
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
-INFO: Added TestCustomer: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Тест Два
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
-INFO: Added TestCustomer: Тест Два
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: Jane Smith
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer: Jane Smith
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all TestCustomer items. Count: 2
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for TestCustomer
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
-INFO: Added TestCustomer: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Тест Два
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
-INFO: Added TestCustomer: Тест Два
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: Found TestCustomer with identity: Тест Два
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository remove
-INFO: Removed TestCustomer: Тест Два
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Тест Два
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: Jane Smith
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer: Jane Smith
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: Found TestCustomer with identity: Jane Smith
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository remove
+INFO: Removed TestCustomer: Jane Smith
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: Jane Smith
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all TestCustomer items. Count: 1
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: Found TestCustomer with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository <init>
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: Found TestCustomer with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository <init>
 INFO: Created repository for TestCustomer
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: No TestCustomer found with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
-INFO: Added TestCustomer: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository findByIdentity
-INFO: Found TestCustomer with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository add
-WARNING: Cannot add TestCustomer - already exists with identity: Тест Один
-нояб. 27, 2025 3:49:56 AM ua.food_delivery.repository.GenericRepository getAll
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: No TestCustomer found with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added TestCustomer: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository findByIdentity
+INFO: Found TestCustomer with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository add
+WARNING: Cannot add TestCustomer - already exists with identity: John Doe
+нояб. 27, 2025 10:50:33 PM ua.food_delivery.repository.GenericRepository getAll
 INFO: Retrieved all TestCustomer items. Count: 1
 ]]></system-err>
 </testsuite>
