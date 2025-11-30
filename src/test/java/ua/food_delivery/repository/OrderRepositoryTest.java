@@ -1,6 +1,7 @@
 package ua.food_delivery.repository;
 
 import org.junit.jupiter.api.*;
+import ua.food_delivery.exception.InvalidDataException;
 import ua.food_delivery.model.Customer;
 import ua.food_delivery.model.MenuItem;
 import ua.food_delivery.model.Order;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -37,10 +39,11 @@ class OrderRepositoryTest {
     }
 
     @Test
-    @DisplayName("Adding null order returns false")
+    @DisplayName("Adding null order throws InvalidDataException")
     void testAddNull() {
-        boolean result = repo.add(null);
-        assertThat(result).isFalse();
+        assertThatThrownBy(() -> repo.add(null))
+                .isInstanceOf(InvalidDataException.class)
+                .hasMessageContaining("cannot be null");
     }
 
     @Test

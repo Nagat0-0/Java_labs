@@ -1,5 +1,7 @@
 package ua.food_delivery.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -26,20 +28,22 @@ public class Restaurant implements Comparable<Restaurant> {
 
     public Restaurant() {}
 
-    public Restaurant(String name, CuisineType cuisineType, String location) {
+    @JsonCreator
+    public Restaurant(
+            @JsonProperty("name") String name,
+            @JsonProperty("cuisineType") CuisineType cuisineType,
+            @JsonProperty("location") String location) {
         this.name = name != null ? name.trim() : null;
         this.cuisineType = cuisineType;
         this.location = location != null ? location.trim() : null;
 
+        ValidationUtils.validate(this);
         logger.info("Created Restaurant: {}", this.name);
     }
 
     public static Restaurant createRestaurant(String name, CuisineType cuisineType, String location) {
-        Restaurant restaurant = new Restaurant(name, cuisineType, location);
-        ValidationUtils.validate(restaurant);
-        return restaurant;
+        return new Restaurant(name, cuisineType, location);
     }
-
 
     public String getName() { return name; }
     public void setName(String name) {

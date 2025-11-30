@@ -1,60 +1,118 @@
 package ua.food_delivery;
 
-import ua.food_delivery.exception.InvalidDataException;
-import ua.food_delivery.model.*;
-import ua.food_delivery.repository.CustomerRepository;
+import ua.food_delivery.config.AppConfig;
+import ua.food_delivery.model.MenuItem;
+import ua.food_delivery.persistence.PersistenceManager;
+import ua.food_delivery.repository.*;
+import ua.food_delivery.service.LoadResult;
+import ua.food_delivery.service.comparison.ComparisonResult;
+import ua.food_delivery.service.comparison.PerformanceComparisonService;
+import ua.food_delivery.service.loading.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("=== Lab 8: Validation Demo ===\n");
 
-        demonstrateRecordValidation();
-        System.out.println("\n" + "-".repeat(50) + "\n");
-        demonstrateClassSetterValidation();
+    public static void main(String[] args) {
+        AppConfig config = new AppConfig();
+        PersistenceManager persistenceManager = new PersistenceManager(config);
+
+        CustomerRepository customerRepository = new CustomerRepository();
+        RestaurantRepository restaurantRepository = new RestaurantRepository();
+        MenuItemRepository menuItemRepository = new MenuItemRepository();
+        OrderRepository orderRepository = new OrderRepository();
+
+        demonstrateParallelLoading(
+                persistenceManager,
+                customerRepository,
+                restaurantRepository,
+                menuItemRepository,
+                orderRepository
+        );
+
+        prepareBulkData(menuItemRepository);
+
+        demonstratePerformanceComparison(
+                menuItemRepository,
+                restaurantRepository
+        );
 
         System.out.println("\nDONE!!!");
     }
 
-    private static void demonstrateRecordValidation() {
-        System.out.println("--- 1. Record Validation (Customer) ---");
+    private static void demonstrateParallelLoading(
+            PersistenceManager persistenceManager,
+            CustomerRepository customerRepository,
+            RestaurantRepository restaurantRepository,
+            MenuItemRepository menuItemRepository,
+            OrderRepository orderRepository) {
 
-        try {
-            System.out.println("Attempting to create VALID Customer...");
-            Customer valid = Customer.createCustomer("Ivan", "Franko", "Lviv St. 10");
-            System.out.println("SUCCESS: " + valid);
+        DataLoader dataLoader = new DataLoader(persistenceManager);
 
-            CustomerRepository repo = new CustomerRepository();
-            repo.add(valid);
-            System.out.println("Added to repository.");
-        } catch (InvalidDataException e) {
-            System.err.println("Error: " + e.getMessage());
-        }
+        LoadResult sequentialResult = dataLoader.load(
+                customerRepository,
+                restaurantRepository,
+                menuItemRepository,
+                orderRepository,
+                new SequentialLoadingStrategy()
+        );
+        System.out.println(sequentialResult);
 
-        try {
-            System.out.println("\nAttempting to create INVALID Customer (Empty Name, Bad Pattern)...");
-            Customer invalid = Customer.createCustomer("123", "", "Short");
-        } catch (InvalidDataException e) {
-            System.err.println("CAUGHT EXPECTED EXCEPTION:\n" + e.getMessage());
-        }
+        clearRepositories(customerRepository, restaurantRepository, menuItemRepository, orderRepository);
+
+        LoadResult parallelResult = dataLoader.load(
+                customerRepository,
+                restaurantRepository,
+                menuItemRepository,
+                orderRepository,
+                new ParallelLoadingStrategy()
+        );
+        System.out.println(parallelResult);
+
+        clearRepositories(customerRepository, restaurantRepository, menuItemRepository, orderRepository);
+
+        LoadResult executorResult = dataLoader.load(
+                customerRepository,
+                restaurantRepository,
+                menuItemRepository,
+                orderRepository,
+                new ExecutorLoadingStrategy(4)
+        );
+        System.out.println(executorResult);
     }
 
-    private static void demonstrateClassSetterValidation() {
-        System.out.println("--- 2. Class Setter Validation (Restaurant) ---");
+    private static void demonstratePerformanceComparison(
+            MenuItemRepository menuItemRepo,
+            RestaurantRepository restaurantRepo) {
 
-        Restaurant restaurant = null;
-        try {
-            restaurant = Restaurant.createRestaurant("Valid Place", CuisineType.ITALIAN, "Kyiv Center");
-            System.out.println("Created: " + restaurant);
-        } catch (InvalidDataException e) { return; }
+        PerformanceComparisonService comparisonService = new PerformanceComparisonService();
 
-        System.out.println("\nCurrent Name: " + restaurant.getName());
-        try {
-            System.out.println("Attempting to set INVALID name (empty)...");
-            restaurant.setName("");
-        } catch (InvalidDataException e) {
-            System.err.println("Setter Error: " + e.getMessage());
+        ComparisonResult filterResult = comparisonService.compareMenuItemFiltering(
+                menuItemRepo, "Item"
+        );
+        System.out.println(filterResult);
+
+        ComparisonResult countResult = comparisonService.compareRestaurantCounting(restaurantRepo);
+        System.out.println(countResult);
+
+        ComparisonResult groupResult = comparisonService.compareMenuItemGroupingWithDelay(menuItemRepo);
+        System.out.println(groupResult);
+    }
+
+    private static void clearRepositories(
+            CustomerRepository c, RestaurantRepository r, MenuItemRepository m, OrderRepository o) {
+        c.clear();
+        r.clear();
+        m.clear();
+        o.clear();
+    }
+
+    private static void prepareBulkData(MenuItemRepository repo) {
+        List<MenuItem> items = new ArrayList<>();
+        for (int i = 0; i < 500; i++) {
+            items.add(MenuItem.createMenuItem("Item " + i, 50.0 + (i % 400), "Bulk"));
         }
-
-        System.out.println("Name after failed setter: " + restaurant.getName() + " (Should remain 'Valid Place')");
+        repo.addAll(items);
     }
 }

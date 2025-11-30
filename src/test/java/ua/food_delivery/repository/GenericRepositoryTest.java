@@ -2,12 +2,14 @@ package ua.food_delivery.repository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ua.food_delivery.exception.InvalidDataException;
 import ua.food_delivery.model.Customer;
 
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class GenericRepositoryTest {
 
@@ -30,11 +32,11 @@ class GenericRepositoryTest {
     void testAddAndFindByIdentity() {
         boolean added = customerRepo.add(c1);
 
-        assertTrue(added);
+        assertTrue(added, "Adding should return true");
         Optional<Customer> found = customerRepo.findByIdentity("John Doe");
 
-        assertTrue(found.isPresent());
-        assertEquals(c1, found.get());
+        assertTrue(found.isPresent(), "Customer should be found");
+        assertEquals(c1, found.get(), "Found customer should match added");
     }
 
     @Test
@@ -42,27 +44,28 @@ class GenericRepositoryTest {
         customerRepo.add(c1);
         Optional<Customer> found = customerRepo.findByIdentity("Non Existent");
 
-        assertTrue(found.isEmpty());
+        assertTrue(found.isEmpty(), "Optional should be empty");
     }
 
     @Test
     void testAddDuplicate() {
         boolean addedFirst = customerRepo.add(c1);
 
-        Customer c1Duplicate = Customer.createCustomer("John", "Doe", "Different Address");
+        Customer c1Duplicate = Customer.createCustomer("John", "Doe", "Address Three");
 
         boolean addedSecond = customerRepo.add(c1Duplicate);
 
-        assertTrue(addedFirst);
-        assertFalse(addedSecond);
-        assertEquals(1, customerRepo.getAll().size());
+        assertTrue(addedFirst, "First add should succeed");
+        assertFalse(addedSecond, "Adding duplicate should return false");
+        assertEquals(1, customerRepo.getAll().size(), "Repository should contain only one item");
     }
 
     @Test
     void testAddNull() {
-        boolean added = customerRepo.add(null);
-        assertFalse(added);
-        assertEquals(0, customerRepo.getAll().size());
+        // ВИПРАВЛЕННЯ: Тепер метод кидає виняток, а не повертає false
+        assertThatThrownBy(() -> customerRepo.add(null))
+                .isInstanceOf(InvalidDataException.class)
+                .hasMessageContaining("null");
     }
 
     @Test
@@ -74,10 +77,10 @@ class GenericRepositoryTest {
 
         boolean removed = customerRepo.remove(c2);
 
-        assertTrue(removed);
-        assertTrue(customerRepo.findByIdentity("Jane Smith").isEmpty());
-        assertEquals(1, customerRepo.getAll().size());
-        assertTrue(customerRepo.findByIdentity("John Doe").isPresent());
+        assertTrue(removed, "Remove should return true");
+        assertTrue(customerRepo.findByIdentity("Jane Smith").isEmpty(), "c2 should be removed");
+        assertEquals(1, customerRepo.getAll().size(), "Size should be 1");
+        assertTrue(customerRepo.findByIdentity("John Doe").isPresent(), "c1 should remain");
     }
 
     @Test
@@ -86,7 +89,7 @@ class GenericRepositoryTest {
 
         boolean removed = customerRepo.remove(c2);
 
-        assertFalse(removed);
+        assertFalse(removed, "Removing non-existent item should return false");
         assertEquals(1, customerRepo.getAll().size());
     }
 

@@ -1,8 +1,10 @@
 package ua.food_delivery.repository;
 
+import ua.food_delivery.exception.InvalidDataException;
 import ua.food_delivery.util.LoggerUtil;
 
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Logger;
 
 public class GenericRepository<T> {
@@ -11,49 +13,86 @@ public class GenericRepository<T> {
 
     protected final List<T> items;
     private final IdentityExtractor<T> identityExtractor;
-    private final String entityType;
+    protected final String entityType;
 
     public GenericRepository(IdentityExtractor<T> identityExtractor, String entityType) {
-        this.items = new ArrayList<>();
+        this.items = new CopyOnWriteArrayList<>();
         this.identityExtractor = identityExtractor;
         this.entityType = entityType;
-        logger.info("Created repository for " + entityType);
+        logger.info("Created thread-safe repository for " + entityType);
     }
 
-    public boolean add(T item) {
+    public synchronized boolean add(T item) {
         if (item == null) {
-            logger.warning("Attempted to add null " + entityType);
-            return false;
+            throw new InvalidDataException(entityType + " cannot be null");
         }
 
         String identity = identityExtractor.extractIdentity(item);
+
         if (findByIdentity(identity).isPresent()) {
-            logger.warning("Cannot add " + entityType + " - already exists with identity: " + identity);
+            String errorMsg = String.format("%s already exists with identity: %s", entityType, identity);
+            logger.severe(errorMsg);
             return false;
         }
 
-        boolean added = items.add(item);
-        if (added) {
-            logger.info("Added " + entityType + ": " + identity);
-        }
-        return added;
+        items.add(item);
+        logger.info("Added " + entityType + ": " + identity);
+        return true;
     }
 
-    public boolean remove(T item) {
+    public int addAll(Collection<T> newItems) {
+        if (newItems == null || newItems.isEmpty()) {
+            return 0;
+        }
+
+        int addedCount = 0;
+        for (T item : newItems) {
+            try {
+                if (add(item)) {
+                    addedCount++;
+                }
+            } catch (Exception e) {
+                logger.warning("Skipping duplicate or invalid: " + e.getMessage());
+            }
+        }
+
+        logger.info("Bulk added " + addedCount + " of " + newItems.size() + " items to " + entityType);
+        return addedCount;
+    }
+
+    public synchronized boolean remove(T item) {
         if (item == null) {
             logger.warning("Attempted to remove null " + entityType);
             return false;
         }
 
         boolean removed = items.remove(item);
-        String identity = identityExtractor.extractIdentity(item);
-
         if (removed) {
-            logger.info("Removed " + entityType + ": " + identity);
+            logger.info("Removed " + entityType + ": " + item);
         } else {
-            logger.warning("Failed to remove " + entityType + ": " + identity);
+            logger.warning("Failed to remove " + entityType + ": " + item);
         }
         return removed;
+    }
+
+    public synchronized boolean removeByIdentity(String identity) {
+        if (identity == null) {
+            logger.warning("Attempted to remove " + entityType + " with null identity");
+            return false;
+        }
+
+        Optional<T> itemToRemove = findByIdentity(identity);
+
+        if (itemToRemove.isPresent()) {
+            boolean removed = items.remove(itemToRemove.get());
+            if (removed) {
+                logger.info("Removed " + entityType + " by identity: " + identity);
+            }
+            return removed;
+        } else {
+            logger.warning("No " + entityType + " found with identity: " + identity + " to remove");
+            return false;
+        }
     }
 
     public Optional<T> findByIdentity(String identity) {
@@ -66,11 +105,6 @@ public class GenericRepository<T> {
                 .filter(item -> identity.equals(identityExtractor.extractIdentity(item)))
                 .findFirst();
 
-        if (result.isPresent()) {
-            logger.info("Found " + entityType + " with identity: " + identity);
-        } else {
-            logger.info("No " + entityType + " found with identity: " + identity);
-        }
 
         return result;
     }
@@ -88,16 +122,20 @@ public class GenericRepository<T> {
         return items.isEmpty();
     }
 
-    public void clear() {
+    public synchronized void clear() {
+        int sizeBefore = items.size();
         items.clear();
-        logger.info("Cleared repository " + entityType);
+        logger.info("Cleared repository. Removed " + sizeBefore + " " + entityType + " items");
     }
 
-    public void sortByIdentity(boolean asc) {
-        items.sort(Comparator.comparing(identityExtractor::extractIdentity));
+    public synchronized void sortByIdentity(boolean asc) {
+        List<T> sorted = new ArrayList<>(items);
+        sorted.sort(Comparator.comparing(identityExtractor::extractIdentity));
         if (!asc) {
-            Collections.reverse(items);
+            Collections.reverse(sorted);
         }
+        items.clear();
+        items.addAll(sorted);
         logger.info("Sorted " + entityType + " by identity in " + (asc ? "ascending" : "descending") + " order");
     }
 

@@ -5,12 +5,14 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
+import ua.food_delivery.exception.InvalidDataException;
 import ua.food_delivery.model.Customer;
 
 import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @DisplayName("Customer Repository Tests")
@@ -35,10 +37,12 @@ class CustomerRepositoryTest {
     }
 
     @Test
-    @DisplayName("Adding null returns false (graceful handling)")
+    @DisplayName("Adding null throws InvalidDataException")
     void testAddNull() {
-        boolean result = customerRepository.add(null);
-        assertFalse(result);
+        // ВИПРАВЛЕННЯ: Ми очікуємо, що метод викине помилку
+        assertThatThrownBy(() -> customerRepository.add(null))
+                .isInstanceOf(InvalidDataException.class)
+                .hasMessageContaining("cannot be null");
     }
 
     static Stream<Arguments> sortIdentityParams() {
@@ -69,6 +73,7 @@ class CustomerRepositoryTest {
         assertEquals("Zebra", sorted.get(2).lastName());
     }
 
+    // --- Stream API ---
     @ParameterizedTest
     @CsvSource({ "Kyiv, 1", "Street, 2", "St, 3", "Berlin, 0" })
     @DisplayName("Stream: Find by address fragment")

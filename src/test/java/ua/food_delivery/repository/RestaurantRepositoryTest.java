@@ -1,6 +1,7 @@
 package ua.food_delivery.repository;
 
 import org.junit.jupiter.api.*;
+import ua.food_delivery.exception.InvalidDataException;
 import ua.food_delivery.model.CuisineType;
 import ua.food_delivery.model.Restaurant;
 
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -35,10 +37,11 @@ class RestaurantRepositoryTest {
     }
 
     @Test
-    @DisplayName("Adding null returns false")
+    @DisplayName("Adding null throws InvalidDataException")
     void testAddNull() {
-        boolean result = repo.add(null);
-        assertThat(result).isFalse();
+        assertThatThrownBy(() -> repo.add(null))
+                .isInstanceOf(InvalidDataException.class)
+                .hasMessageContaining("cannot be null");
     }
 
     @Test
