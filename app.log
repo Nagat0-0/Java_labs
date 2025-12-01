@@ -37636,3 +37636,1865 @@ INFO: Finished reading menu items file.
 INFO: Finished reading customers file.
 дек. 01, 2025 3:03:15 AM ua.food_delivery.util.FileReaderUtil readRestaurantsFromFile
 INFO: Finished reading restaurants file.
+дек. 01, 2025 10:21:27 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 10:21:27 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 10:21:27 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 10:21:27 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:21:27 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 10:21:27 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 10:21:27 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 10:21:27 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 10:21:27 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 10:21:27 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 10:21:27 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 10:21:27 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 10:21:27 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 10:21:27 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 10:21:27 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 10:21:27 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 10:21:27 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 10:21:28 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 10:21:28 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 10:21:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 10:21:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 10:21:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 10:21:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 10:21:28 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 10:21:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 10:21:28 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 10:21:28 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 374 ms
+дек. 01, 2025 10:21:28 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 10:22:25 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:22:25 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 10:22:30 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 10:22:32 PM ua.food_delivery.repository.MenuItemRepository findByPriceRange
+INFO: Found 2 items with price between 0,00 and 100,00
+дек. 01, 2025 10:22:33 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:22:33 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 10:22:35 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 10:22:39 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Restaurant items. Count: 3
+дек. 01, 2025 10:22:41 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:22:41 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Customer items. Count: 2
+дек. 01, 2025 10:22:43 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:22:43 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Order items. Count: 2
+дек. 01, 2025 10:24:36 PM ua.food_delivery.repository.MenuItemRepository findByPriceRange
+INFO: Found 2 items with price between 0,00 and 100,00
+дек. 01, 2025 10:27:22 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 10:27:22 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 10:27:22 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 10:27:22 PM ua.food_delivery.repository.GenericRepository removeByIdentity
+WARNING: No Customer found with identity: API Tester to remove
+дек. 01, 2025 10:29:52 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 10:29:52 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Customer items. Count: 3
+дек. 01, 2025 10:29:52 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Saving 3 items of type customers to JSON file: data\customers.json
+дек. 01, 2025 10:29:52 PM ua.food_delivery.serializer.AbstractDataSerializer serialize
+INFO: Successfully serialized 3 items to JSON file: data\customers.json
+дек. 01, 2025 10:29:52 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Successfully saved 3 customers items to JSON
+дек. 01, 2025 10:29:52 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Restaurant items. Count: 3
+дек. 01, 2025 10:29:52 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Saving 3 items of type restaurants to JSON file: data\restaurants.json
+дек. 01, 2025 10:29:52 PM ua.food_delivery.serializer.AbstractDataSerializer serialize
+INFO: Successfully serialized 3 items to JSON file: data\restaurants.json
+дек. 01, 2025 10:29:52 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Successfully saved 3 restaurants items to JSON
+дек. 01, 2025 10:29:52 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 10:29:52 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Saving 3 items of type menuitems to JSON file: data\menuitems.json
+дек. 01, 2025 10:29:52 PM ua.food_delivery.serializer.AbstractDataSerializer serialize
+INFO: Successfully serialized 3 items to JSON file: data\menuitems.json
+дек. 01, 2025 10:29:52 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Successfully saved 3 menuitems items to JSON
+дек. 01, 2025 10:29:52 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Order items. Count: 2
+дек. 01, 2025 10:29:52 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Saving 2 items of type orders to JSON file: data\orders.json
+дек. 01, 2025 10:29:52 PM ua.food_delivery.serializer.AbstractDataSerializer serialize
+INFO: Successfully serialized 2 items to JSON file: data\orders.json
+дек. 01, 2025 10:29:52 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Successfully saved 2 orders items to JSON
+дек. 01, 2025 10:29:52 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: Data saved successfully
+дек. 01, 2025 10:29:52 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 10:29:52 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 10:29:52 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 10:29:53 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:29:53 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 10:29:53 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 10:29:53 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 10:29:53 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type customers
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Customer
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load menuitems from JSON: Failed to deserialize data
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load orders from JSON: Failed to deserialize data
+дек. 01, 2025 10:29:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 10:29:53 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 10:29:53 PM ua.food_delivery.listener.AppContextListener contextInitialized
+SEVERE: Startup failed: java.lang.RuntimeException: ua.food_delivery.exception.DataSerializationException: Failed to deserialize data
+дек. 01, 2025 10:29:53 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 10:29:56 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 10:29:56 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 10:29:56 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 10:29:56 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:29:56 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 10:29:56 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 10:29:56 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 10:29:56 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load menuitems from JSON: Failed to deserialize data
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load orders from JSON: Failed to deserialize data
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type customers
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Customer
+дек. 01, 2025 10:29:56 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 10:29:56 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 10:29:56 PM ua.food_delivery.listener.AppContextListener contextInitialized
+SEVERE: Startup failed: java.lang.RuntimeException: ua.food_delivery.exception.DataSerializationException: Failed to deserialize data
+дек. 01, 2025 10:29:56 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 10:30:19 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 10:30:19 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 10:30:19 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 10:30:19 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:30:19 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 10:30:19 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 10:30:19 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 10:30:19 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type customers
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Customer
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load menuitems from JSON: Failed to deserialize data
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load orders from JSON: Failed to deserialize data
+дек. 01, 2025 10:30:19 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 10:30:19 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 10:30:19 PM ua.food_delivery.listener.AppContextListener contextInitialized
+SEVERE: Startup failed: java.lang.RuntimeException: ua.food_delivery.exception.DataSerializationException: Failed to deserialize data
+дек. 01, 2025 10:30:19 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 10:31:13 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 10:31:13 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 10:31:13 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 10:31:13 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:31:13 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 10:31:13 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 10:31:13 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 10:31:13 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type customers
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Customer
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load menuitems from JSON: Failed to deserialize data
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load orders from JSON: Failed to deserialize data
+дек. 01, 2025 10:31:13 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 10:31:13 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 10:31:13 PM ua.food_delivery.listener.AppContextListener contextInitialized
+SEVERE: Startup failed: java.lang.RuntimeException: ua.food_delivery.exception.DataSerializationException: Failed to deserialize data
+дек. 01, 2025 10:31:17 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 10:41:23 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 10:41:23 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 10:41:23 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 10:41:23 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:41:23 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 10:41:23 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 10:41:23 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 10:41:23 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load menuitems from JSON: Failed to deserialize data
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type customers
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Customer
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load orders from JSON: Failed to deserialize data
+дек. 01, 2025 10:41:23 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 10:41:23 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 10:41:23 PM ua.food_delivery.listener.AppContextListener contextInitialized
+SEVERE: Startup failed: java.lang.RuntimeException: ua.food_delivery.exception.DataSerializationException: Failed to deserialize data
+дек. 01, 2025 10:41:23 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 10:47:37 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 10:47:37 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 10:47:37 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 10:47:37 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:47:37 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 10:47:37 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 10:47:37 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 10:47:37 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load menuitems from JSON: Failed to deserialize data
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type customers
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Customer
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load orders from JSON: Failed to deserialize data
+дек. 01, 2025 10:47:37 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 10:47:37 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 10:47:37 PM ua.food_delivery.listener.AppContextListener contextInitialized
+SEVERE: Startup failed: java.lang.RuntimeException: ua.food_delivery.exception.DataSerializationException: Failed to deserialize data
+дек. 01, 2025 10:47:41 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 10:58:54 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 10:58:54 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 10:58:54 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 10:58:54 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 10:58:54 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 10:58:54 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 10:58:54 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 10:58:54 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type customers
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Customer
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load orders from JSON: Failed to deserialize data
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load menuitems from JSON: Failed to deserialize data
+дек. 01, 2025 10:58:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 10:58:54 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 10:58:54 PM ua.food_delivery.listener.AppContextListener contextInitialized
+SEVERE: Startup failed: java.lang.RuntimeException: ua.food_delivery.exception.DataSerializationException: Failed to deserialize data
+дек. 01, 2025 10:58:58 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 11:02:53 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:02:53 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:02:53 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:02:53 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:02:53 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:02:53 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:02:53 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:02:53 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:02:53 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:02:53 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:02:53 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:02:53 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:02:53 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:02:53 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:02:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:02:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:02:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:02:53 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:02:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:02:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type customers
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Customer
+дек. 01, 2025 11:02:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:02:54 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:02:54 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:02:54 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 366 ms
+дек. 01, 2025 11:02:54 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:03:04 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:03:04 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Restaurant items. Count: 3
+дек. 01, 2025 11:03:07 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:03:07 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:03:25 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:03:25 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 11:03:25 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:03:25 PM ua.food_delivery.repository.GenericRepository add
+SEVERE: Customer already exists with identity: Api Tester
+дек. 01, 2025 11:03:25 PM ua.food_delivery.repository.GenericRepository removeByIdentity
+INFO: Removed Customer by identity: Api Tester
+дек. 01, 2025 11:03:46 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:03:46 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 11:03:46 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 11:03:46 PM ua.food_delivery.repository.GenericRepository removeByIdentity
+INFO: Removed Customer by identity: Api Tester
+дек. 01, 2025 11:07:27 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 11:07:27 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Customer items. Count: 2
+дек. 01, 2025 11:07:27 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Saving 2 items of type customers to JSON file: data\customers.json
+дек. 01, 2025 11:07:27 PM ua.food_delivery.serializer.AbstractDataSerializer serialize
+INFO: Successfully serialized 2 items to JSON file: data\customers.json
+дек. 01, 2025 11:07:27 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Successfully saved 2 customers items to JSON
+дек. 01, 2025 11:07:27 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Restaurant items. Count: 3
+дек. 01, 2025 11:07:27 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Saving 3 items of type restaurants to JSON file: data\restaurants.json
+дек. 01, 2025 11:07:27 PM ua.food_delivery.serializer.AbstractDataSerializer serialize
+INFO: Successfully serialized 3 items to JSON file: data\restaurants.json
+дек. 01, 2025 11:07:27 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Successfully saved 3 restaurants items to JSON
+дек. 01, 2025 11:07:27 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:07:27 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Saving 3 items of type menuitems to JSON file: data\menuitems.json
+дек. 01, 2025 11:07:27 PM ua.food_delivery.serializer.AbstractDataSerializer serialize
+INFO: Successfully serialized 3 items to JSON file: data\menuitems.json
+дек. 01, 2025 11:07:27 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Successfully saved 3 menuitems items to JSON
+дек. 01, 2025 11:07:27 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all Order items. Count: 2
+дек. 01, 2025 11:07:27 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Saving 2 items of type orders to JSON file: data\orders.json
+дек. 01, 2025 11:07:27 PM ua.food_delivery.serializer.AbstractDataSerializer serialize
+INFO: Successfully serialized 2 items to JSON file: data\orders.json
+дек. 01, 2025 11:07:27 PM ua.food_delivery.persistence.PersistenceManager save
+INFO: Successfully saved 2 orders items to JSON
+дек. 01, 2025 11:07:27 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: Data saved successfully
+дек. 01, 2025 11:10:28 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:10:28 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:10:28 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:10:28 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:10:28 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:10:28 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:10:28 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:10:28 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load menuitems from JSON: Failed to deserialize data
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load orders from JSON: Failed to deserialize data
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:10:28 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:10:28 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:10:28 PM ua.food_delivery.listener.AppContextListener contextInitialized
+SEVERE: Startup failed: java.lang.RuntimeException: ua.food_delivery.exception.DataSerializationException: Failed to deserialize data
+дек. 01, 2025 11:10:31 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 11:11:39 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:11:39 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:11:39 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:11:39 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:11:39 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:11:39 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:11:39 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:11:39 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load menuitems from JSON: Failed to deserialize data
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager load
+SEVERE: Failed to load orders from JSON: Failed to deserialize data
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:11:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:11:39 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:11:39 PM ua.food_delivery.listener.AppContextListener contextInitialized
+SEVERE: Startup failed: java.lang.RuntimeException: ua.food_delivery.exception.DataSerializationException: Failed to deserialize data
+дек. 01, 2025 11:11:42 PM ua.food_delivery.listener.AppContextListener contextDestroyed
+INFO: === APPLICATION SHUTDOWN ===
+дек. 01, 2025 11:15:26 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:15:26 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:15:26 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:15:26 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:15:26 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:15:26 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:15:26 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:15:26 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:15:26 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:15:26 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:15:26 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 362 ms
+дек. 01, 2025 11:15:26 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:15:59 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:15:59 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 11:16:18 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine JAPANESE
+дек. 01, 2025 11:16:35 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:16:35 PM ua.food_delivery.repository.CustomerRepository findByAddressContaining
+INFO: Found 1 customers with address containing 'Kyiv'
+дек. 01, 2025 11:17:24 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:17:24 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:17:24 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:17:24 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:17:24 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:17:24 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:17:24 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:17:24 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:17:24 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:17:24 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:17:24 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 370 ms
+дек. 01, 2025 11:17:24 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:17:32 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:17:32 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:17:46 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:17:46 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:17:46 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 11:17:46 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:17:46 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 11:17:46 PM ua.food_delivery.repository.GenericRepository removeByIdentity
+INFO: Removed Customer by identity: Api Tester
+дек. 01, 2025 11:18:34 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:18:34 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:18:34 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:18:34 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:18:34 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:18:34 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:18:34 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:18:34 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:18:34 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:18:34 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:18:34 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 356 ms
+дек. 01, 2025 11:18:34 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:18:44 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:18:44 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:19:11 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:19:11 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:19:11 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 11:19:11 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:19:11 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 11:19:11 PM ua.food_delivery.repository.GenericRepository removeByIdentity
+INFO: Removed Customer by identity: Api Tester
+дек. 01, 2025 11:19:35 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:19:35 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:19:35 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:19:35 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:19:35 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:19:35 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:19:35 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:19:35 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:19:35 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:19:35 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:19:35 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:19:35 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:19:35 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:19:35 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:19:35 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:19:35 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:19:35 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:19:36 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:19:36 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:19:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:19:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:19:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:19:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:19:36 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:19:36 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:19:36 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:19:36 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 390 ms
+дек. 01, 2025 11:19:36 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:20:34 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:20:34 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:23:05 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:25:02 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:25:02 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:25:02 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:25:03 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:25:03 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:25:03 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:25:03 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:25:03 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:25:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:25:03 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:25:03 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 368 ms
+дек. 01, 2025 11:25:03 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:25:18 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:27:12 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:27:12 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:27:12 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:27:12 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:27:12 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:27:12 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:27:12 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:27:12 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:27:12 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:27:12 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:27:12 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 400 ms
+дек. 01, 2025 11:27:12 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:28:21 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:28:21 PM ua.food_delivery.repository.MenuItemRepository findByPriceRange
+INFO: Found 2 items with price between 0,00 and 100,00
+дек. 01, 2025 11:28:26 PM ua.food_delivery.repository.MenuItemRepository findByPriceRange
+INFO: Found 3 items with price between 0,00 and 500,00
+дек. 01, 2025 11:29:11 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:30:03 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:30:03 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:30:03 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:30:03 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:30:03 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:30:03 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:30:03 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:30:03 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:30:03 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:30:03 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:30:03 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 388 ms
+дек. 01, 2025 11:30:03 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:30:12 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:31:14 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:31:14 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:31:14 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:31:14 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:31:14 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:31:14 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:31:14 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:31:14 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:31:14 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:31:14 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:31:14 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 421 ms
+дек. 01, 2025 11:31:14 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:37:39 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:37:39 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:37:39 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:37:39 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:37:39 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:37:39 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:37:39 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:37:39 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:37:39 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:37:39 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:37:39 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:37:39 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:37:39 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:37:39 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:37:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:37:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:37:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:37:39 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:37:40 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:37:40 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:37:40 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:37:40 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:37:40 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:37:40 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 353 ms
+дек. 01, 2025 11:37:40 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:38:02 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:39:02 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:39:02 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:39:02 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:39:02 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:39:02 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:39:02 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:39:02 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:39:02 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:39:02 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:39:02 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:39:02 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 340 ms
+дек. 01, 2025 11:39:02 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:40:46 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:40:46 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:40:46 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:40:46 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:40:46 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:40:46 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:40:46 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:40:46 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:40:46 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:40:46 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:40:46 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:40:46 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:40:46 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:40:46 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:40:46 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:40:46 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:40:46 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:40:47 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:40:47 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:40:47 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:40:47 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:40:47 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:40:47 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:40:47 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:40:47 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:40:47 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:40:47 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 338 ms
+дек. 01, 2025 11:40:47 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:41:19 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:41:19 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:41:19 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:41:19 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 11:41:19 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:41:19 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 11:41:19 PM ua.food_delivery.repository.GenericRepository removeByIdentity
+INFO: Removed Customer by identity: Api Tester
+дек. 01, 2025 11:41:52 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: === APPLICATION STARTUP ===
+дек. 01, 2025 11:41:52 PM ua.food_delivery.config.AppConfig loadProperties
+WARNING: Could not load config from file system: config.properties. Trying classpath...
+дек. 01, 2025 11:41:52 PM ua.food_delivery.config.AppConfig loadProperties
+INFO: Configuration loaded successfully from classpath: config.properties
+дек. 01, 2025 11:41:52 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:41:52 PM ua.food_delivery.serializer.YamlDataSerializer <init>
+INFO: YamlDataSerializer initialized with custom YAML configuration
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager initializeSerializers
+CONFIG: Registered serializers: [JSON, YAML]
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager <init>
+INFO: RepositoryManager initialized with 2 serializers
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Customer
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Restaurant
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for MenuItem
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository <init>
+INFO: Created thread-safe repository for Order
+дек. 01, 2025 11:41:52 PM ua.food_delivery.service.loading.DataLoader <init>
+INFO: DataLoader initialized with format: JSON
+дек. 01, 2025 11:41:52 PM ua.food_delivery.service.loading.DataLoader load
+INFO: Loading data using strategy: ExecutorLoadingStrategy
+дек. 01, 2025 11:41:52 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: Starting loading with ExecutorService (pool size: 4)...
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading customers from JSON file: data\customers.json
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading restaurants from JSON file: data\restaurants.json
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading menuitems from JSON file: data\menuitems.json
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Loading orders from JSON file: data\orders.json
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type menuitems
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type customers
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Margherita
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Ivan Zebra
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cola
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Anna Apple
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added MenuItem: Cheesecake
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to MenuItem
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Customer
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 3 items of type restaurants
+дек. 01, 2025 11:41:52 PM ua.food_delivery.persistence.PersistenceManager load
+INFO: Successfully loaded 2 items of type orders
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Sushi Master
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Pasta House
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T03:46:38.900582800
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Restaurant: Burger King
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Order: User_2025-11-27T01:46:38.902583200
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 3 of 3 items to Restaurant
+дек. 01, 2025 11:41:52 PM ua.food_delivery.repository.GenericRepository addAll
+INFO: Bulk added 2 of 2 items to Order
+дек. 01, 2025 11:41:52 PM ua.food_delivery.service.loading.ExecutorLoadingStrategy load
+INFO: ExecutorService loading completed in 328 ms
+дек. 01, 2025 11:41:52 PM ua.food_delivery.listener.AppContextListener contextInitialized
+INFO: Repositories initialized and stored in context
+дек. 01, 2025 11:42:05 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:42:05 PM ua.food_delivery.repository.MenuItemRepository findByPriceRange
+INFO: Found 2 items with price between 0,00 and 100,00
+дек. 01, 2025 11:42:12 PM ua.food_delivery.repository.GenericRepository getAll
+INFO: Retrieved all MenuItem items. Count: 3
+дек. 01, 2025 11:42:12 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:42:12 PM ua.food_delivery.repository.RestaurantRepository findByCuisine
+INFO: Found 1 restaurants with cuisine ITALIAN
+дек. 01, 2025 11:42:12 PM ua.food_delivery.serializer.JsonDataSerializer <init>
+INFO: JsonDataSerializer initialized with pretty printing enabled
+дек. 01, 2025 11:42:12 PM ua.food_delivery.repository.GenericRepository add
+INFO: Added Customer: Api Tester
+дек. 01, 2025 11:42:12 PM ua.food_delivery.repository.GenericRepository removeByIdentity
+INFO: Removed Customer by identity: Api Tester

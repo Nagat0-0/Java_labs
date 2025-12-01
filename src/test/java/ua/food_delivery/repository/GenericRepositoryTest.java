@@ -62,7 +62,6 @@ class GenericRepositoryTest {
 
     @Test
     void testAddNull() {
-        // ВИПРАВЛЕННЯ: Тепер метод кидає виняток, а не повертає false
         assertThatThrownBy(() -> customerRepo.add(null))
                 .isInstanceOf(InvalidDataException.class)
                 .hasMessageContaining("null");

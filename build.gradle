@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'war'
+    id 'org.gretty' version '4.1.0'
 }
 
 group = 'ua.food_delivery'
@@ -9,10 +11,25 @@ repositories {
     mavenCentral()
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+gretty {
+    httpPort = 8080
+    contextPath = '/api'
+    servletContainer = 'tomcat10'
+}
+
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'org.junit.jupiter:junit-jupiter-params'
+    testImplementation 'org.assertj:assertj-core:3.25.1'
+
+    implementation 'org.slf4j:slf4j-api:2.0.12'
+    runtimeOnly 'ch.qos.logback:logback-classic:1.4.14'
 
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.0'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.0'
@@ -22,19 +39,13 @@ dependencies {
     implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
     implementation 'org.glassfish:jakarta.el:4.0.2'
 
-    testImplementation 'org.assertj:assertj-core:3.25.1'
-    implementation 'org.slf4j:slf4j-api:2.0.12'
-    runtimeOnly 'ch.qos.logback:logback-classic:1.4.14'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:5.0.0'
 }
 
 test {
     useJUnitPlatform()
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDirs = ['src/main/resources']
-        }
-    }
+war {
+    archiveFileName = 'food-delivery-api.war'
 }

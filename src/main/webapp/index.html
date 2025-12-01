@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery API</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .endpoint {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 8px 0;
+            border-left: 4px solid #007bff;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .method {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #28a745;
+            color: white;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+            min-width: 50px;
+            text-align: center;
+        }
+        .method.post { background: #ffc107; color: #333; }
+        .method.put { background: #17a2b8; }
+        .method.delete { background: #dc3545; }
+        .description {
+            color: #666;
+            font-family: 'Segoe UI', sans-serif;
+            margin-left: 10px;
+        }
+        .filter {
+            border-left-color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🍕 Food Delivery API</h1>
+    <p>RESTful API for managing restaurants, menu items, customers, and orders.</p>
+
+    <h2>🍔 Menu Items</h2>
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/api/menuitems" target="_blank">/api/menuitems</a>
+        <span class="description">- Get all menu items</span>
+    </div>
+    <div class="endpoint filter">
+        <span class="method">GET</span>
+        <a href="/api/menuitems?maxPrice=100" target="_blank">/api/menuitems?maxPrice=X</a>
+        <span class="description">- Filter by max price</span>
+    </div>
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/api/menuitems/Margherita" target="_blank">/api/menuitems/{name}</a>
+        <span class="description">- Get item by name</span>
+    </div>
+    <div class="endpoint">
+        <span class="method post">POST</span>
+        /api/menuitems
+        <span class="description">- Create new item</span>
+    </div>
+    <div class="endpoint">
+        <span class="method put">PUT</span>
+        /api/menuitems/{name}
+        <span class="description">- Update item</span>
+    </div>
+    <div class="endpoint">
+        <span class="method delete">DELETE</span>
+        /api/menuitems/{name}
+        <span class="description">- Delete item</span>
+    </div>
+
+    <h2>🏠 Restaurants</h2>
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/api/restaurants" target="_blank">/api/restaurants</a>
+        <span class="description">- Get all restaurants</span>
+    </div>
+    <div class="endpoint filter">
+        <span class="method">GET</span>
+        <a href="/api/restaurants?cuisine=ITALIAN" target="_blank">/api/restaurants?cuisine=X</a>
+        <span class="description">- Filter by cuisine type</span>
+    </div>
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/api/restaurants/Sushi%20Master" target="_blank">/api/restaurants/{name}</a>
+        <span class="description">- Get restaurant by name</span>
+    </div>
+    <div class="endpoint">
+        <span class="method post">POST</span>
+        /api/restaurants
+        <span class="description">- Create new restaurant</span>
+    </div>
+    <div class="endpoint">
+        <span class="method put">PUT</span>
+        /api/restaurants/{name}
+        <span class="description">- Update restaurant</span>
+    </div>
+    <div class="endpoint">
+        <span class="method delete">DELETE</span>
+        /api/restaurants/{name}
+        <span class="description">- Delete restaurant</span>
+    </div>
+
+    <h2>👤 Customers</h2>
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/api/customers" target="_blank">/api/customers</a>
+        <span class="description">- Get all customers</span>
+    </div>
+    <div class="endpoint filter">
+        <span class="method">GET</span>
+        <a href="/api/customers?address=Kyiv" target="_blank">/api/customers?address=X</a>
+        <span class="description">- Filter by address</span>
+    </div>
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/api/customers/Ivan%20Zebra" target="_blank">/api/customers/{id}</a>
+        <span class="description">- Get customer by ID (First Last)</span>
+    </div>
+    <div class="endpoint">
+        <span class="method post">POST</span>
+        /api/customers
+        <span class="description">- Create new customer</span>
+    </div>
+    <div class="endpoint">
+        <span class="method put">PUT</span>
+        /api/customers/{id}
+        <span class="description">- Update customer</span>
+    </div>
+    <div class="endpoint">
+        <span class="method delete">DELETE</span>
+        /api/customers/{id}
+        <span class="description">- Delete customer</span>
+    </div>
+
+    <h2>📦 Orders</h2>
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/api/orders" target="_blank">/api/orders</a>
+        <span class="description">- Get all orders</span>
+    </div>
+    <div class="endpoint filter">
+        <span class="method">GET</span>
+        <a href="/api/orders?status=PENDING" target="_blank">/api/orders?status=X</a>
+        <span class="description">- Filter by status</span>
+    </div>
+    <div class="endpoint">
+        <span class="method post">POST</span>
+        /api/orders
+        <span class="description">- Create new order</span>
+    </div>
+
+    <hr style="margin: 30px 0;">
+    <p><small>Built with Java Servlets, Jackson, SLF4J/Logback</small></p>
+</div>
+</body>
+</html>

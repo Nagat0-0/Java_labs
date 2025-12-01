@@ -39,7 +39,6 @@ class CustomerRepositoryTest {
     @Test
     @DisplayName("Adding null throws InvalidDataException")
     void testAddNull() {
-        // ВИПРАВЛЕННЯ: Ми очікуємо, що метод викине помилку
         assertThatThrownBy(() -> customerRepository.add(null))
                 .isInstanceOf(InvalidDataException.class)
                 .hasMessageContaining("cannot be null");
@@ -73,7 +72,6 @@ class CustomerRepositoryTest {
         assertEquals("Zebra", sorted.get(2).lastName());
     }
 
-    // --- Stream API ---
     @ParameterizedTest
     @CsvSource({ "Kyiv, 1", "Street, 2", "St, 3", "Berlin, 0" })
     @DisplayName("Stream: Find by address fragment")

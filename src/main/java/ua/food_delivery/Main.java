@@ -1,118 +1,79 @@
 package ua.food_delivery;
 
-import ua.food_delivery.config.AppConfig;
-import ua.food_delivery.model.MenuItem;
-import ua.food_delivery.persistence.PersistenceManager;
-import ua.food_delivery.repository.*;
-import ua.food_delivery.service.LoadResult;
-import ua.food_delivery.service.comparison.ComparisonResult;
-import ua.food_delivery.service.comparison.PerformanceComparisonService;
-import ua.food_delivery.service.loading.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
 
 public class Main {
 
+    private static final String BASE_URL = "http://localhost:8080/api";
+    private static final HttpClient client = HttpClient.newBuilder()
+            .version(HttpClient.Version.HTTP_2)
+            .connectTimeout(Duration.ofSeconds(10))
+            .build();
+
     public static void main(String[] args) {
-        AppConfig config = new AppConfig();
-        PersistenceManager persistenceManager = new PersistenceManager(config);
+        System.out.println("=== FOOD DELIVERY API CLIENT DEMO ===\n");
+        System.out.println("NOTE: Make sure the server is running via 'gradle appRun' before running this Main class.\n");
 
-        CustomerRepository customerRepository = new CustomerRepository();
-        RestaurantRepository restaurantRepository = new RestaurantRepository();
-        MenuItemRepository menuItemRepository = new MenuItemRepository();
-        OrderRepository orderRepository = new OrderRepository();
+        try {
+            System.out.println("--- 1. GET /menuitems ---");
+            sendRequest(HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "/menuitems"))
+                    .GET()
+                    .build());
 
-        demonstrateParallelLoading(
-                persistenceManager,
-                customerRepository,
-                restaurantRepository,
-                menuItemRepository,
-                orderRepository
-        );
+            System.out.println("\n--- 2. GET /restaurants?cuisine=ITALIAN ---");
+            sendRequest(HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "/restaurants?cuisine=ITALIAN"))
+                    .GET()
+                    .build());
 
-        prepareBulkData(menuItemRepository);
+            System.out.println("\n--- 3. POST /customers ---");
+            String newCustomerJson = """
+                    {
+                        "firstName": "Api",
+                        "lastName": "Tester",
+                        "address": "Web Street 42"
+                    }
+                    """;
+            sendRequest(HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "/customers"))
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(newCustomerJson))
+                    .build());
 
-        demonstratePerformanceComparison(
-                menuItemRepository,
-                restaurantRepository
-        );
+            System.out.println("\n--- 4. GET /customers/Api%20Tester ---");
+            sendRequest(HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "/customers/Api%20Tester"))
+                    .GET()
+                    .build());
 
-        System.out.println("\nDONE!!!");
-    }
+            System.out.println("\n--- 5. DELETE /customers/Api%20Tester ---");
+            sendRequest(HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "/customers/Api%20Tester"))
+                    .DELETE()
+                    .build());
 
-    private static void demonstrateParallelLoading(
-            PersistenceManager persistenceManager,
-            CustomerRepository customerRepository,
-            RestaurantRepository restaurantRepository,
-            MenuItemRepository menuItemRepository,
-            OrderRepository orderRepository) {
-
-        DataLoader dataLoader = new DataLoader(persistenceManager);
-
-        LoadResult sequentialResult = dataLoader.load(
-                customerRepository,
-                restaurantRepository,
-                menuItemRepository,
-                orderRepository,
-                new SequentialLoadingStrategy()
-        );
-        System.out.println(sequentialResult);
-
-        clearRepositories(customerRepository, restaurantRepository, menuItemRepository, orderRepository);
-
-        LoadResult parallelResult = dataLoader.load(
-                customerRepository,
-                restaurantRepository,
-                menuItemRepository,
-                orderRepository,
-                new ParallelLoadingStrategy()
-        );
-        System.out.println(parallelResult);
-
-        clearRepositories(customerRepository, restaurantRepository, menuItemRepository, orderRepository);
-
-        LoadResult executorResult = dataLoader.load(
-                customerRepository,
-                restaurantRepository,
-                menuItemRepository,
-                orderRepository,
-                new ExecutorLoadingStrategy(4)
-        );
-        System.out.println(executorResult);
-    }
-
-    private static void demonstratePerformanceComparison(
-            MenuItemRepository menuItemRepo,
-            RestaurantRepository restaurantRepo) {
-
-        PerformanceComparisonService comparisonService = new PerformanceComparisonService();
-
-        ComparisonResult filterResult = comparisonService.compareMenuItemFiltering(
-                menuItemRepo, "Item"
-        );
-        System.out.println(filterResult);
-
-        ComparisonResult countResult = comparisonService.compareRestaurantCounting(restaurantRepo);
-        System.out.println(countResult);
-
-        ComparisonResult groupResult = comparisonService.compareMenuItemGroupingWithDelay(menuItemRepo);
-        System.out.println(groupResult);
-    }
-
-    private static void clearRepositories(
-            CustomerRepository c, RestaurantRepository r, MenuItemRepository m, OrderRepository o) {
-        c.clear();
-        r.clear();
-        m.clear();
-        o.clear();
-    }
-
-    private static void prepareBulkData(MenuItemRepository repo) {
-        List<MenuItem> items = new ArrayList<>();
-        for (int i = 0; i < 500; i++) {
-            items.add(MenuItem.createMenuItem("Item " + i, 50.0 + (i % 400), "Bulk"));
+        } catch (Exception e) {
+            System.err.println("Error connecting to server. Is it running?");
+            e.printStackTrace();
         }
-        repo.addAll(items);
+    }
+
+    private static void sendRequest(HttpRequest request) {
+        try {
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            System.out.println("Request: " + request.method() + " " + request.uri());
+            System.out.println("Response Status: " + response.statusCode());
+            System.out.println("Response Body:");
+            System.out.println(response.body());
+
+        } catch (Exception e) {
+            System.err.println("Failed to send request: " + e.getMessage());
+        }
     }
 }
